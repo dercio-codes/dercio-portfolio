@@ -128,7 +128,7 @@ export default function Home() {
                 zIndex: 4,
                 width: "200px",
                 backgroundColor: "transparent",
-                backgroundImage: 'url("/logo.png")',
+                backgroundImage: 'url("/logo (1).png")',
                 backgroundSize: "contain",
                 backgroundPosition: "center",
                 backgroundRepeat: "no-repeat",
