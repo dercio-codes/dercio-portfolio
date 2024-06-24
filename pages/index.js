@@ -349,7 +349,7 @@ const Projects = () => {
       image: "/graphic-design/ufs-virtual.png",
     },
     {
-      title: "Airbuzz Tobacco and THC Disposables",
+      title: "Tobacco and THC Disposables",
       url: "https://airbuzz-gp.vercel.app/",
       image: "/graphic-design/airbuzz-2.png",
     },
@@ -584,7 +584,7 @@ const TabController = () => {
         <Projects />
       </Box>
       <Box sx={{ display: value === "xp" ? "flex" : "none" }} index={2}>
-        Item Four Content
+        <Experience />
       </Box>
       <Box sx={{ display: value === "skills" ? "flex" : "none" }} index={3}>
         {/* <SkillsCentre /> */}
@@ -597,7 +597,7 @@ const TabController = () => {
   );
 };
 
-const SkillsCentre = () => {
+const Experience = () => {
   return (
     <Box sx={{ width: "100%" }}>
       <Box sx={{ padding: "21px 0", width: "100%" }}>
@@ -606,56 +606,8 @@ const SkillsCentre = () => {
           className="font-fam"
           sx={{ fontWeight: "600", fontSize: "21px", m: "12px 0" }}
         >
-          {"Web Development"}
+          {"Experience"}
         </Typography>
-
-        {SkillsStats.map((skill, index) => {
-          return (
-            <Grid key={index} container>
-              <Grid item xs={2}>
-                <Avatar
-                  src={skill.icon}
-                  sx={{
-                    height: "35px",
-                    width: "35px",
-                    margin: "12px 0",
-                    borderRadius: "0",
-                  }}
-                />
-              </Grid>
-              <Grid
-                item
-                xs={10}
-                sx={{
-                  display: "flex",
-                  justifyContent: "center",
-                  // alignItems: "center",
-                  flexDirection: "column",
-                  height: "100%",
-                  minHeight: "60px",
-                }}
-              >
-                <Typography className="font-fam">{skill.skill}</Typography>
-
-                <Box
-                  sx={{
-                    width: "100%",
-                    background: "rgba(1,1,1,.1)",
-                    height: "2.5px",
-                  }}
-                >
-                  <Box
-                    sx={{
-                      background: "rgba(1,1,1,.7)",
-                      width: skill.level,
-                      height: "2.5px",
-                    }}
-                  />
-                </Box>
-              </Grid>
-            </Grid>
-          );
-        })}
       </Box>
     </Box>
   );
@@ -812,18 +764,9 @@ const AboutMe = () => {
           </animated.span>
 
           <Typography className="font-fam" sx={{ m: "12px 0" }}>
-            Hello! My name is Dercio Maduna, and I am a passionate frontend
-            developer with a strong background in building exceptional web
-            applications. With expertise in technologies like React.js, Next.js,
-            and Node.js, I am committed to delivering user-friendly and visually
-            appealing digital experiences. Throughout my career, I have had the
-            privilege of working on a diverse range of projects, each one
-            challenging me to push the boundaries of what is possible with
-            modern web development. From creating comprehensive healthcare
-            platforms like the UFS Virtual Clinic to building engaging websites
-            for student organizations and event planning companies, I have honed
-            my skills in crafting intuitive interfaces and robust backend
-            systems.
+            {
+              "  Hello! My name is Dercio Maduna, and I am a passionate frontend developer with a strong background in building exceptional web applications. With expertise in technologies like React.js, Next.js, and Node.js, I am committed to delivering user-friendly and visually appealing digital experiences. Throughout my career, I have had the privilege of working on a diverse range of projects, each one challenging me to push the boundaries of what is possible with modern web development. From creating comprehensive healthcare platforms like the UFS Virtual Clinic to building engaging websites for student organizations and event planning companies, I have honed my skills in crafting intuitive interfaces and robust backend systems."
+            }
           </Typography>
           <Box
             sx={{
@@ -838,20 +781,9 @@ const AboutMe = () => {
             }}
           />
           <Typography className="font-fam" sx={{ m: "12px 0" }}>
-            In this portfolio, you will find a selection of my most notable
-            projects, showcasing my technical prowess, attention to detail, and
-            ability to bring ideas to life. Each project is a testament to my
-            dedication to staying at the forefront of industry trends,
-            continuously learning, and collaborating with talented teams to
-            create impactful solutions. As you explore my work, I hope you'll
-            get a sense of my commitment to excellence, my love for
-            problem-solving, and my desire to make a meaningful difference
-            through the power of technology. I am always eager to take on new
-            challenges and push the boundaries of what is possible in the world
-            of frontend development. Thank you for taking the time to visit my
-            portfolio. I look forward to the opportunity to discuss how I can
-            contribute my skills and passion to your next project. Happy
-            exploring!
+            {
+              "In this portfolio, you will find a selection of my most notable projects, showcasing my technical prowess, attention to detail, and ability to bring ideas to life. Each project is a testament to my dedication to staying at the forefront of industry trends, continuously learning, and collaborating with talented teams to create impactful solutions. As you explore my work, I hope you'll get a sense of my commitment to excellence, my love for problem-solving, and my desire to make a meaningful difference through the power of technology. I am always eager to take on new challenges and push the boundaries of what is possible in the world of frontend development. Thank you for taking the time to visit my portfolio. I look forward to the opportunity to discuss how I can contribute my skills and passion to your next project. Happy exploring!"
+            }
           </Typography>
         </Box>
       </Grid>
