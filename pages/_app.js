@@ -2,6 +2,7 @@ import "../styles/globals.css";
 import dynamic from "next/dynamic";
 import { createTheme } from "@mui/material/styles";
 import { ThemeProvider } from "@mui/material/styles";
+import Head from "next/head";
 
 const theme = createTheme({
   palette: {
@@ -18,6 +19,15 @@ const AnimatedCursor = dynamic(() => import("react-animated-cursor"), {
 function MyApp({ Component, pageProps }) {
   return (
     <ThemeProvider theme={theme}>
+      <Head>
+        <title>Dercio Maduna - Frontend Developer</title>
+        <meta
+          name="description"
+          content="Dercio Maduna's portfolio website showcasing his frontend development skills and projects."
+        />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="icon" href="/dercio.jpg" />
+      </Head>
       <Component {...pageProps} />
       <AnimatedCursor
         innerSize={24}

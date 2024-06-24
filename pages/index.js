@@ -1,14 +1,4 @@
 import React, { useRef, useEffect, useState } from "react";
-// Import Swiper React components
-import { Swiper, SwiperSlide } from "swiper/react";
-
-// Import Swiper styles
-import "swiper/css";
-import "swiper/css/effect-cube";
-// import "swiper/css/pagination";
-
-// import required modules
-import { EffectCube, Pagination } from "swiper";
 import {
   Box,
   Select,
@@ -25,7 +15,11 @@ import {
   Tab,
   Tabs,
   LinearProgress,
+  Link,
 } from "@mui/material";
+import { useSpring, animated } from "@react-spring/web";
+
+import { GitHub, LinkedIn, Twitter } from "@mui/icons-material";
 
 export default function Home() {
   const Technologies =
@@ -47,6 +41,7 @@ export default function Home() {
             }}
           >
             <Avatar
+              className="bounce-in-top"
               src={"/dercio.jpg"}
               sx={{
                 m: "21px auto",
@@ -91,6 +86,131 @@ export default function Home() {
           <TabController />
         </Grid>
       </Grid>
+      <Box
+        sx={{
+          backgroundImage:
+            'url("https://img.freepik.com/free-photo/3d-abstract-creative-sphere_23-2150885489.jpg?t=st=1719258690~exp=1719262290~hmac=9d7389f69370d7f6fa1a943072252f27a6bd68c54cc055f9b9c4eab011165df3&w=740")',
+        }}
+      >
+        <Box
+          component="footer"
+          sx={{
+            backgroundImage:
+              "linear-gradient(to top, rgba(1,1,1,0.9), rgba(1,1,1,0.3))",
+            color: "#fff",
+            padding: "40px",
+            marginTop: "auto",
+          }}
+        >
+          <Grid container justifyContent="center" spacing={4}>
+            <Grid item xs={12} sm={6} sx={{ display: "none" }}>
+              <Typography variant="h6" gutterBottom>
+                Dercio Maduna
+              </Typography>
+              <Typography variant="body2">
+                Passionate Frontend Developer
+              </Typography>
+            </Grid>
+            <Grid item xs={12} sm={6}>
+              <Typography variant="h6" gutterBottom>
+                Connect with Me
+              </Typography>
+              <Box sx={{}}>
+                <Link
+                  href="https://github.com/derciomaduna"
+                  target="_blank"
+                  sx={{
+                    display: "flex",
+                    alignItems: "center",
+                    textDecoratioon: "none",
+                    color: "rgba(200,200,200,.7)",
+                  }}
+                  rel="noopener noreferrer"
+                >
+                  GitHub
+                  <GitHub
+                    sx={{ margin: "12px 8px", color: "rgba(200,200,200,1)" }}
+                  />
+                </Link>
+              </Box>
+              <Box sx={{}}>
+                <Link
+                  href="https://www.linkedin.com/in/dercio-maduna-b718501b6/"
+                  target="_blank"
+                  sx={{
+                    display: "flex",
+                    alignItems: "center",
+                    textDecoratioon: "none",
+                    color: "rgba(200,200,200,.7)",
+                  }}
+                  rel="noopener noreferrer"
+                >
+                  LinkedIn
+                  <LinkedIn
+                    sx={{ margin: "12px 8px", color: "rgba(200,200,200,1)" }}
+                  />
+                </Link>
+              </Box>
+              <Box sx={{}}>
+                <Link
+                  href="https://twitter.com/derciomaduna"
+                  target="_blank"
+                  sx={{
+                    display: "flex",
+                    alignItems: "center",
+                    textDecoratioon: "none",
+                    color: "rgba(200,200,200,.7)",
+                  }}
+                  rel="noopener noreferrer"
+                >
+                  Twitter
+                  <Twitter
+                    sx={{ margin: "12px 8px", color: "rgba(200,200,200,1)" }}
+                  />
+                </Link>
+              </Box>
+            </Grid>
+            <Grid item xs={12} sm={6} sx={{ display: "none" }}>
+              <Typography variant="h6" gutterBottom>
+                Quick Links
+              </Typography>
+              <Box>
+                <Link href="/">Home</Link>
+              </Box>
+              <Box>
+                <Link href="/about">About</Link>
+              </Box>
+              <Box>
+                <Link href="/portfolio">Portfolio</Link>
+              </Box>
+              <Box>
+                <Link href="/contact">Contact</Link>
+              </Box>
+            </Grid>
+            <Grid item xs={12} sm={6}>
+              <Typography variant="h6" gutterBottom>
+                Contact
+              </Typography>
+              <Typography variant="body2">12derciomaduna@gmail.com</Typography>
+              <Typography variant="body2">0677551017</Typography>
+              <Typography variant="body2">Johannesburg, Gauteng</Typography>
+            </Grid>
+          </Grid>
+          <Box
+            sx={{
+              marginTop: "20px",
+              textAlign: "center",
+              fontSize: "14px",
+              color: "#aaa",
+            }}
+          >
+            <Typography variant="body2">
+              &copy; {new Date().getFullYear()} Dercio Maduna. All rights
+              reserved.
+            </Typography>
+          </Box>
+        </Box>
+      </Box>
     </Box>
   );
 }
@@ -140,7 +260,7 @@ const ContactForm = () => {
           <Box
             sx={{
               width: "100%",
-              background: "red",
+
               display: { xs: "block", md: "block" },
               height: "100%",
               minHeight: { xs: "10vh", md: "50vh" },
@@ -207,16 +327,140 @@ const ContactForm = () => {
 };
 
 const Projects = () => {
+  const myProjects = [
+    {
+      title: "Atomus Dev Website Launch 2023",
+      url: "https://www.atomusdev.co.za/",
+      image: "/graphic-design/atomus-2.png",
+    },
+    {
+      title: "The YKM Talk Podcast Banner",
+      url: "",
+      image: "/graphic-design/podcast.png",
+    },
+    {
+      title: "Atomus Dev Website Promotion",
+      url: "https://www.atomusdev.co.za/",
+      image: "/graphic-design/atomus-1.png",
+    },
+    {
+      title: "UFS Virutal Clinic",
+      url: "https://ufs-clinic-web.vercel.app/",
+      image: "/graphic-design/ufs-virtual.png",
+    },
+    {
+      title: "Airbuzz Tobacco and THC Disposables",
+      url: "https://airbuzz-gp.vercel.app/",
+      image: "/graphic-design/airbuzz-2.png",
+    },
+    {
+      title: "ITSA Web",
+      url: "https://itsa-web.vercel.app/",
+      image: "/graphic-design/itsa-web.png",
+    },
+    {
+      title: "Salon Website Template",
+      url: "https://web-template-0.vercel.app/",
+      image: "/graphic-design/saloon-web.png",
+    },
+    {
+      title: "Misguided Entertainment",
+      url: "https://misguidedsa.co.za/",
+      image: "/graphic-design/misguided-image.png",
+    },
+    {
+      title: "T and L Upholstery",
+      url: "https://tlupholstery.co.za/",
+      image: "/graphic-design/tl-upholstery.png",
+    },
+  ];
+
   return (
-    <Box>
+    <Box sx={{ width: "100%", m: "32px 0" }}>
+      <Typography
+        className="font-fam"
+        sx={{ fontWeight: "600", fontSize: "21px", m: "12px 0" }}
+      >
+        {"Projects"}
+      </Typography>
+      <Typography
+        className="font-fam"
+        sx={{
+          fontSize: "12px",
+          textDecoration: "none",
+          margin: "6px 0",
+        }}
+      >
+        {
+          "Throughout my career, I have worked on diverse, impactful projects that showcase my expertise in frontend development and full-stack engineering. These include building comprehensive healthcare and student organization platforms using React.js, Next.js, and Node.js, as well as creating user-friendly websites for event planning companies."
+        }
+      </Typography>
       <Grid container>
-        <Grid
-          item
-          xs={12}
-          sx={{ padding: { xs: "21px 0", md: "40px " }, background: "" }}
-        >
-          {"Boom Projects Now"}
-        </Grid>
+        {myProjects.map((proj, index) => {
+          return (
+            <Grid
+              className="project-container"
+              key={index}
+              item
+              xs={12}
+              md={3.8}
+              sx={{
+                m: "21px auto",
+              }}
+            >
+              <Link
+                sx={{
+                  width: "100%",
+                  textDecoration: "none",
+                  "&:hover": { background: "rgba(1,1,1,.9)" },
+                }}
+                href={proj.url}
+                target="_blank"
+              >
+                <Box
+                  sx={{
+                    backgroundImage: `url('${proj.image}')`,
+                    backgroundSize: "cover",
+                    backgroundRepeat: "no-repeat",
+                    backgroundPosition: "center",
+                    height: "150px",
+                    width: "100%",
+                  }}
+                />
+                <Box
+                  sx={{
+                    display: "flex",
+                    justifyContent: "space-between",
+                    alignItems: "center",
+                  }}
+                >
+                  <Typography
+                    className="font-fam"
+                    sx={{
+                      fontSize: "10px",
+                      fontWeight: "600",
+                      textDecoration: "none",
+                      margin: "6px 0",
+                    }}
+                  >
+                    {proj.title}
+                  </Typography>
+                  <Box
+                    className="project-icon"
+                    sx={{
+                      width: "16px",
+                      height: "16px",
+                      backgroundImage: `url('/icons8-expand-50.png')`,
+                      backgroundSize: "cover",
+                      backgroundRepeat: "no-repeat",
+                      backgroundPosition: "center",
+                    }}
+                  />
+                </Box>
+              </Link>
+            </Grid>
+          );
+        })}
       </Grid>
     </Box>
   );
@@ -234,6 +478,7 @@ const TabController = () => {
     fontSize: { xs: "12px", md: "12px" },
     margin: { xs: "0 auto", md: "0 6px" },
     transition: "500ms",
+    borderTop: "5px solid transparent",
   };
 
   return (
@@ -259,6 +504,8 @@ const TabController = () => {
             ...TabStyles,
             borderBottom:
               value === "about" ? "5px solid #111" : "5px solid transparent",
+            // borderLeft:
+            //   value === "about" ? "5px solid #111" : "5px solid transparent",
           }}
           label=""
         >
@@ -273,6 +520,8 @@ const TabController = () => {
             ...TabStyles,
             borderBottom:
               value === "projects" ? "5px solid #111" : "5px solid transparent",
+            borderTop:
+              value === "projects" ? "5px solid #111" : "5px solid transparent",
           }}
           label=""
         >
@@ -285,6 +534,8 @@ const TabController = () => {
           }}
           sx={{
             ...TabStyles,
+            borderBottom:
+              value === "xp" ? "5px solid #111" : "5px solid transparent",
             borderBottom:
               value === "xp" ? "5px solid #111" : "5px solid transparent",
           }}
@@ -301,6 +552,8 @@ const TabController = () => {
             ...TabStyles,
             borderBottom:
               value === "skills" ? "5px solid #111" : "5px solid transparent",
+            borderTop:
+              value === "skills" ? "5px solid #111" : "5px solid transparent",
           }}
           label=""
         >
@@ -313,8 +566,10 @@ const TabController = () => {
           }}
           sx={{
             ...TabStyles,
-            borderBottom:
+            borderTop:
               value === "contact" ? "5px solid #111" : "5px solid transparent",
+            // borderRight:
+            //   value === "contact" ? "5px solid #111" : "5px solid transparent",
           }}
           label=""
         >
@@ -356,7 +611,7 @@ const SkillsCentre = () => {
 
         {SkillsStats.map((skill, index) => {
           return (
-            <Grid container>
+            <Grid key={index} container>
               <Grid item xs={2}>
                 <Avatar
                   src={skill.icon}
@@ -506,6 +761,13 @@ const SkillsSection = ({ SkillsStats }) => {
 };
 
 const AboutMe = () => {
+  const props = useSpring({
+    from: { opacity: 0, y: 20 },
+    to: { opacity: 1, y: 0 },
+    delay: 500,
+    config: { duration: 1000 },
+  });
+
   return (
     <Grid container>
       <Grid
@@ -513,7 +775,7 @@ const AboutMe = () => {
         xs={12}
         md={6}
         sx={{
-          p: { xs: "0", md: "32px 21px" },
+          p: { xs: "0", md: "32px 21px 32px 0" },
           minHeight: "auto",
           color: "white",
         }}
@@ -521,7 +783,6 @@ const AboutMe = () => {
         <Box
           sx={{
             width: "100%",
-            background: "red",
             display: { xs: "none", md: "block" },
             height: "100%",
             backgroundImage: 'url("/dercio.jpg")',
@@ -538,13 +799,18 @@ const AboutMe = () => {
         sx={{ p: { xs: "12px 0", md: "32px 21px" }, minHeight: "50vh" }}
       >
         <Box sx={{ m: "32px 0 0 0" }}>
-          <Typography className="font-fam">{"Dercio Maduna"}</Typography>
-          <Typography
-            className="font-fam"
-            sx={{ fontWeight: "600", fontSize: "21px", m: "12px 0" }}
-          >
-            {"Welcome to My Portfolio"}
-          </Typography>
+          <animated.span style={props}>
+            <Typography className="font-fam">{"Dercio Maduna"}</Typography>
+          </animated.span>
+          <animated.span style={props} delay={100}>
+            <Typography
+              className="font-fam"
+              sx={{ fontWeight: "600", fontSize: "21px", m: "12px 0" }}
+            >
+              {"Welcome to My Portfolio"}
+            </Typography>
+          </animated.span>
+
           <Typography className="font-fam" sx={{ m: "12px 0" }}>
             Hello! My name is Dercio Maduna, and I am a passionate frontend
             developer with a strong background in building exceptional web
@@ -562,7 +828,7 @@ const AboutMe = () => {
           <Box
             sx={{
               width: "100%",
-              background: "red",
+
               display: { xs: "block", md: "none" },
               height: "35vh",
               backgroundImage: 'url("/dercio.jpg")',
