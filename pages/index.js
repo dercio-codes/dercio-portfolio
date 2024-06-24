@@ -1,4 +1,4 @@
-import React, { useRef, useState } from "react";
+import React, { useRef, useEffect, useState } from "react";
 // Import Swiper React components
 import { Swiper, SwiperSlide } from "swiper/react";
 
@@ -21,6 +21,10 @@ import {
   Stack,
   CircularProgress,
   Paper,
+  Avatar,
+  Tab,
+  Tabs,
+  LinearProgress,
 } from "@mui/material";
 
 export default function Home() {
@@ -28,2919 +32,666 @@ export default function Home() {
     "Bash|Linux|C|C#|ReactJs|React Native|MUI|AWS|Google Cloud & Firebase|Agile";
 
   return (
-    <Box
-      id="my-app"
-      sx={{
-        padding: {
-          xs: "1.5rem 2.5rem",
-          lg: "2.5rem 5rem",
-        },
-        height: "100vh",
-        background: "rgba(1,1,1,.3)",
-      }}
-    >
-      <Typography
-        sx={{
-          fontSize: "16px",
-          textAlign: "center",
-        }}
-      >
-        {" "}
-        Scroll left or right to view the site.{" "}
-      </Typography>
-          <Box
+    <Box>
+      <Box sx={{ width: "90%", margin: "0 auto", p: "21px 0" }}>
+        <Grid container>
+          <Grid
+            item
+            xs={12}
+            md={3}
             sx={{
-              height: "95vh",
-              position: "relative",
-              background: "",
               display: "flex",
-              justifyContent: "space-evenly",
               alignItems: "center",
-            }}
-          >
-            <Box>
-              <Typography
-                sx={{
-                  fontSize: "70px",
-                }}
-              >
-                {" "}
-                DM{" "}
-              </Typography>{" "}
-              <Typography
-                sx={{
-                  fontSize: "16px",
-                }}
-              >
-                {" "}
-                Dercio Maduna{" "}
-              </Typography>
-            </Box>{" "}
-            <Box
-              sx={{
-                height: "250px",
-                position: "absolute",
-                bottom: "0rem",
-                left: "0rem",
-                width: "250px",
-                backgroundColor: "transparent",
-                backgroundImage: 'url("/banner.png")',
-                backgroundSize: "contain",
-                backgroundPosition: "center",
-                backgroundRepeat: "no-repeat",
-                padding: "0.5rem 2.5rem",
-                display: "flex",
-                justifyContent: "space-evenly",
-                alignItems: "center",
-              }}
-            />{" "}
-            <Box
-              sx={{
-                height: "350px",
-                position: "absolute",
-                bottom: "0rem",
-                right: "0rem",
-                opacity: "0.3",
-                width: "500px",
-                backgroundColor: "transparent",
-                backgroundImage: 'url("/banner-effect.jpg")',
-                backgroundSize: "contain",
-                backgroundPosition: "center",
-                backgroundRepeat: "no-repeat",
-                padding: "0.5rem 2.5rem",
-                display: "flex",
-                justifyContent: "space-evenly",
-                alignItems: "center",
-              }}
-            />
-          </Box>
-          <Box
-            sx={{
-              height: "150px",
-              display: "flex",
-              justifyContent: "space-between",
-              alignItems: "center",
-            }}
-          >
-            <Box
-              sx={{
-                height: "150px",
-                zIndex: 4,
-                width: "200px",
-                backgroundColor: "transparent",
-                backgroundImage: 'url("/logo (1).png")',
-                backgroundSize: "contain",
-                backgroundPosition: "center",
-                backgroundRepeat: "no-repeat",
-                padding: "0.5rem 2.5rem",
-                display: "flex",
-                justifyContent: "space-evenly",
-                alignItems: "center",
-              }}
-            />
-            <Box
-              sx={{
-                display: "flex",
-              }}
-            >
-              <Typography
-                sx={{
-                  fontSize: "18px",
-                  margin: "0 12px 0 12px",
-                }}
-              >
-                {" "}
-                Instagram{" "}
-              </Typography>{" "}
-              <Typography
-                sx={{
-                  fontSize: "18px",
-                  margin: "0 12px 0 12px",
-                }}
-              >
-                {" "}
-                Linked{" "}
-              </Typography>{" "}
-              <Typography
-                sx={{
-                  fontSize: "18px",
-                  margin: "0 12px 0 12px",
-                }}
-              >
-                {" "}
-                Twitter{" "}
-              </Typography>
-            </Box>{" "}
-          </Box>
-
-          <Box
-            sx={{
-              padding: "21px",
-              zIndex: 5,
-              background: "rgba(1,1,1,0.1)",
-              transition: "800ms",
-              "&:hover": {
-                background: "rgba(1,1,1,.3)",
-              },
-            }}
-          >
-            <Box
-              sx={{
-                height: { xs:'100px' , lg:"150px"},
-                background: "",
-                display: "flex",
-                justifyContent: "space-evenly",
-                alignItems: "center",
-              }}
-            >
-              <Typography
-                sx={{
-                  fontSize: {
-                    xs: "16",
-                    lg: "24px",
-                  },
-                  opacity: "0.5",
-                }}
-              >
-                {" "}
-                Graphic Design{" "}
-              </Typography>{" "}
-              <Typography
-                sx={{
-                  fontSize: {
-                    xs: "21px",
-                    lg: "40px",
-                  },
-                  fontWeight: "400",
-                }}
-              >
-                {" "}
-                Software / Web Development{" "}
-              </Typography>{" "}
-              <Typography
-                sx={{
-                  fontSize: {
-                    xs: "16",
-                    lg: "24px",
-                  },
-                  opacity: "0.5",
-                }}
-              >
-                {" "}
-                Blog{" "}
-              </Typography>
-            </Box>
-
-            <Grid container>
-              <Grid
-                item
-                xs={12}
-                lg={4}
-                sx={{
-                  padding: "21px",
-                  height: "300px",
-                  background: "",
-                  display: {
-                    xs: "none",
-                    lg: "flex",
-                  },
-                }}
-              >
-                <Paper
-                  sx={{
-                    width: {
-                      xs: "100%",
-                      md: "100%",
-                    },
-                    backgroundColor: "transparent",
-                    height: "100%",
-                    backgroundImage: 'url("/graphic-design/podcast.png")',
-                    backgroundSize: "contain",
-                    backgroundPosition: "center",
-                    backgroundRepeat: "no-repeat",
-                    padding: "0.5rem 2.5rem",
-                  }}
-                />
-              </Grid>{" "}
-              <Grid
-                item
-                xs={12}
-                lg={4}
-                sx={{
-                  padding: "21px",
-                  height: "300px",
-                  background: "",
-                  display: "flex",
-                  flexDirection: "column",
-                  justifyContent: "space-evenly",
-                  alignItems: "center",
-                }}
-              >
-                <Box
-                  sx={{
-                    height: "70%",
-                    margin: "auto auto",
-                    display: "flex",
-                    flexDirection: "column",
-                    justifyContent: "space-evenly",
-                    alignItems: "center",
-                  }}
-                >
-                  <Typography
-                    sx={{
-                      fontSize: "24px",
-                      opacity: "0.5",
-                    }}
-                  >
-                    {" "}
-                    minimal{" "}
-                  </Typography>{" "}
-                  <Typography
-                    sx={{
-                      fontSize: "36px",
-                      fontWeight: "400",
-                    }}
-                  >
-                    {" "}
-                    Glass Polymorphism{" "}
-                  </Typography>{" "}
-                  <Typography
-                    sx={{
-                      fontSize: "24px",
-                      opacity: "0.5",
-                    }}
-                  >
-                    {" "}
-                    retro{" "}
-                  </Typography>
-                </Box>{" "}
-              </Grid>{" "}
-              <Grid
-                item
-                xs={12}
-                md={6}
-                lg={4}
-                sx={{
-                  padding: "21px",
-                  height: "300px",
-                  background: "",
-                }}
-              >
-                <Paper
-                  sx={{
-                    width: {
-                      xs: "100%",
-                      md: "100%",
-                    },
-                    backgroundColor: "transparent",
-                    height: "100%",
-                    backgroundImage: 'url("/graphic-design/atomus-1.png")',
-                    backgroundSize: "contain",
-                    backgroundPosition: "center",
-                    backgroundRepeat: "no-repeat",
-                    padding: "0.5rem 2.5rem",
-                  }}
-                />
-              </Grid>{" "}
-              <Grid
-                item
-                xs={12}
-                md={6}
-                lg={4}
-                sx={{
-                  padding: "21px",
-                  height: "300px",
-                  background: "",
-                }}
-              >
-                <Paper
-                  sx={{
-                    width: {
-                      xs: "100%",
-                      md: "100%",
-                    },
-                    backgroundColor: "transparent",
-                    height: "100%",
-                    backgroundImage: 'url("/graphic-design/atomus-2.png")',
-                    backgroundSize: "contain",
-                    backgroundPosition: "center",
-                    backgroundRepeat: "no-repeat",
-                    padding: "0.5rem 2.5rem",
-                  }}
-                />
-              </Grid>{" "}
-              <Grid
-                item
-                xs={12}
-                md={6}
-                lg={4}
-                sx={{
-                  padding: "21px",
-                  height: "300px",
-                  background: "",
-                }}
-              >
-                <Paper
-                  sx={{
-                    width: {
-                      xs: "100%",
-                      md: "100%",
-                    },
-                    backgroundColor: "transparent",
-                    height: "100%",
-                    backgroundImage: 'url("/graphic-design/template-0.png")',
-                    backgroundSize: "contain",
-                    backgroundPosition: "center",
-                    backgroundRepeat: "no-repeat",
-                    padding: "0.5rem 2.5rem",
-                  }}
-                />
-              </Grid>{" "}
-              <Grid
-                item
-                xs={12}
-                md={6}
-                lg={4}
-                sx={{
-                  padding: "21px",
-                  height: "300px",
-                  background: "",
-                }}
-              >
-                <Paper
-                  sx={{
-                    width: {
-                      xs: "100%",
-                      md: "100%",
-                    },
-                    backgroundColor: "transparent",
-                    height: "100%",
-                    backgroundImage: 'url("/graphic-design/atomus-3.png")',
-                    backgroundSize: "cover",
-                    backgroundPosition: "center",
-                    backgroundRepeat: "no-repeat",
-                    padding: "0.5rem 2.5rem",
-                  }}
-                />
-              </Grid>
-            </Grid>
-          </Box>
-          <Box
-            sx={{
-              padding: "0 0 2.5rem 0",
-              minHeight: "100vh",
-              display: "flex",
+              justifyContent: "center",
               flexDirection: "column",
-              justifyContent: "space-evenly",
-              alignItems: "center",
             }}
           >
-            <Typography
+            <Avatar
+              src={"/dercio.jpg"}
               sx={{
-                fontSize: "60px",
-                fontWeight: "400",
-                margin: "2.5rem 0",
+                m: "21px auto",
+                objectFit: "contain",
+                width: { xs: "150px", lg: "120px" },
+                height: { xs: "150px", lg: "120px" },
               }}
-            >
-              {" "}
-              Technologies{" "}
-            </Typography>
-            <Box
-              sx={{
-                height: "",
-                width: "100%",
-                background: "",
-                display: "flex",
-                justifyContent: "space-evenly",
-                alignItems: "center",
-              }}
-            >
-              <Typography
-                sx={{
-                  fontSize: {
-                    xs: "20px",
-                    lg: "24px",
-                  },
-                  opacity: "0.5",
-                }}
-              >
-                {" "}
-                Graphic Design{" "}
-              </Typography>{" "}
-              <Typography
-                sx={{
-                  fontSize: "40px",
-                  fontWeight: "400",
-                  margin: "0 7rem 0 0",
-                }}
-              >
-                {" "}
-                Additional{" "}
-              </Typography>{" "}
-              <Typography
-                sx={{
-                  fontSize: {
-                    xs: "20px",
-                    lg: "24px",
-                  },
-                  opacity: "0.5",
-                }}
-              >
-                {" "}
-                Blog{" "}
-              </Typography>
-            </Box>{" "}
-            <Grid container>
-              <Grid
-                item
-                xs={12}
-                md={4}
-                sx={{
-                  margin: "2.5rem 0",
-                  display: "flex",
-                  alignItems: "center",
-                  justifyContent: "center",
-                }}
-              >
-                <Box
-                  sx={{
-                    position: "relative",
-                    display: "inline-flex",
-                  }}
-                >
-                  <CircularProgress
-                    variant="determinate"
-                    size={"15rem"}
-                    color="inherit"
-                    value={70}
-                    sx={{
-                      rotate: "200deg",
-                    }}
-                  />{" "}
-                  <Box
-                    sx={{
-                      top: 0,
-                      left: 0,
-                      bottom: 0,
-                      right: 0,
-                      position: "absolute",
-                      display: "flex",
-                      alignItems: "center",
-                      justifyContent: "center",
-                    }}
-                  >
-                    <Typography
-                      sx={{
-                        fontSize: "30px",
-                      }}
-                    >
-                      {" "}
-                      HTML{" "}
-                    </Typography>{" "}
-                  </Box>{" "}
-                </Box>
-              </Grid>{" "}
-              <Grid
-                item
-                xs={12}
-                md={4}
-                sx={{
-                  margin: "2.5rem 0",
-                  display: "flex",
-                  alignItems: "center",
-                  justifyContent: "center",
-                }}
-              >
-                <Box
-                  sx={{
-                    position: "relative",
-                    display: "inline-flex",
-                  }}
-                >
-                  <CircularProgress
-                    variant="determinate"
-                    color="secondary"
-                    size={"15rem"}
-                    value={70}
-                    sx={{
-                      rotate: "200deg",
-                    }}
-                  />{" "}
-                  <Box
-                    sx={{
-                      top: 0,
-                      left: 0,
-                      bottom: 0,
-                      right: 0,
-                      position: "absolute",
-                      display: "flex",
-                      alignItems: "center",
-                      justifyContent: "center",
-                    }}
-                  >
-                    <Typography
-                      sx={{
-                        fontSize: "30px",
-                      }}
-                    >
-                      {" "}
-                      CSS{" "}
-                    </Typography>{" "}
-                  </Box>{" "}
-                </Box>
-              </Grid>{" "}
-              <Grid
-                item
-                xs={12}
-                md={4}
-                sx={{
-                  margin: "2.5rem 0",
-                  display: "flex",
-                  alignItems: "center",
-                  justifyContent: "center",
-                }}
-              >
-                <Box
-                  sx={{
-                    position: "relative",
-                    display: "inline-flex",
-                  }}
-                >
-                  <CircularProgress
-                    variant="determinate"
-                    size={"15rem"}
-                    color="success"
-                    value={70}
-                    sx={{
-                      rotate: "200deg",
-                    }}
-                  />{" "}
-                  <Box
-                    sx={{
-                      top: 0,
-                      left: 0,
-                      bottom: 0,
-                      right: 0,
-                      position: "absolute",
-                      display: "flex",
-                      alignItems: "center",
-                      justifyContent: "center",
-                    }}
-                  >
-                    <Typography
-                      sx={{
-                        fontSize: "30px",
-                      }}
-                    >
-                      {" "}
-                      Javascript{" "}
-                    </Typography>{" "}
-                  </Box>{" "}
-                </Box>
-              </Grid>
-            </Grid>
-            <Box
-              sx={{
-                padding: "1rem 0",
-                background: "",
-                display: "flex",
-                justifyContent: "center",
-                alignItems: "center",
-                flexWrap: "wrap",
-              }}
-            >
-              {" "}
-              {Technologies.split("|").map((item, index) => (
-                <Typography
-                  sx={{
-                    fontSize: "18px",
-                    lineHeight: "3rem",
-                    cursor: "pointer",
-                    fontWeight: "400",
-                    margin: "0 6px",
-                  }}
-                  key={item}
-                >
-                  {" "}
-                  {item}{" "}
-                  <Typography
-                    component="span"
-                    variant="span"
-                    sx={{
-                      margin: "0 6px",
-                    }}
-                  >
-                    {" "}
-                    {index === 9 ? "" : "|"}{" "}
-                  </Typography>{" "}
-                </Typography>
-              ))}{" "}
-            </Box>
-            <Paper elevation={0}
-              sx={{
-                width: "300px",
-                height: "250px",
-                backgroundColor: "transparent",
-                backgroundImage: 'url("/vercel.svg")',
-                backgroundSize: "contain",
-                filter:'invert(1)',
-                backgroundPosition: "center",
-                backgroundRepeat: "no-repeat",
-                padding: "0.5rem 2.5rem",
-              }}
-            />{" "}
-            <Box
-              sx={{
-                padding: "0 2.5rem",
-                display: "flex",
-                alignItems: "center",
-                justifyContent: "center",
-              }}
-            >
-              <Typography
-                variant="p"
-                component="p"
-                sx={{
-                  textAlign: "justify",
-                  fontSize: "16px",
-                  lineHeight: "2rem",
-                  width: {
-                    xs: "100%",
-                    lg: "50%",
-                  },
-                }}
-              >
-                {" "}
-                {
-                  "Hello, I'm Dercio, a passionate and dedicated developer with a strong background in web development and a focus on creating elegant and efficient solutions. With 3+ years of experience in the industry, I have worked on a wide range of projects, from building responsive and user-friendly websites to developing robust web applications.My expertise lies in front-end development, where I specialize in HTML, CSS, and JavaScript frameworks such as React and MUI.I strive for clean and maintainable code, following industry best practices and staying updated with the latest trends and technologies. In addition to my technical skills, I possess excellent communication and time management abilities, allowing me to effectively manage projects and meet deadlines. I am always eager to expand my knowledge and tackle new challenges.Feel free to explore my portfolio to see some of the projects I've worked on."
-                }{" "}
-              </Typography>{" "}
-            </Box>
-          </Box>
-          <Achievements />
-          <Box
+            />
+          </Grid>
+          <Grid
+            item
+            xs={12}
+            md={9}
             sx={{
-              minHeight: "100vh",
-              background: "",
+              display: "flex",
+              // alignItems: "center",
+              justifyContent: "center",
+              flexDirection: "column",
             }}
           >
-            <Typography
-              sx={{
-                fontSize: "40px",
-                textAlign: "center",
-                fontWeight: "400",
-                margin: "2.5rem 0",
-              }}
-            >
+            <Typography className="font-fam" sx={{ fontSize: "36px" }}>
               {" "}
-              Bio{" "}
+              Dercio Maduna{" "}
             </Typography>
-            <Grid container>
-              <Grid
-                item
-                xs={12}
-                lg={6}
-                sx={{
-                  minHeight: "80vh",
-                  background: "",
-                  padding: "0.5rem 2.5rem",
-                }}
-              >
-                <Typography
-                  variant="h5"
-                  component="h5"
-                  sx={{
-                    margin: "1.5rem 0",
-                  }}
-                >
-                  {" "}
-                  Software Engineering at <a href=""> ALX </a>
-                </Typography>
-                <Typography
-                  variant="p"
-                  component="p"
-                  sx={{
-                    textAlign: "justify",
-                    fontSize: "16px",
-                    lineHeight: "2rem",
-                  }}
-                >
-                  {" "}
-                  {
-                    "Hello, I'm Dercio, a passionate and dedicated developer with a strong background in web development and a focus on creating elegant and efficient solutions. With 3+ years of experience in the industry, I have worked on a wide range of projects, from building responsive and user-friendly websites to developing robust web applications.My expertise lies in front-end development, where I specialize in HTML, CSS, and JavaScript frameworks such as React and MUI. I am also proficient in back-end technologies like Node.js and Express, enabling me to create seamless end-to-end solutions. I am a detail-oriented problem solver who enjoys collaborating with teams and clients to deliver high-quality results. I strive for clean and maintainable code, following industry best practices and staying updated with the latest trends and technologies. In addition to my technical skills, I possess excellent communication and time management abilities, allowing me to effectively manage projects and meet deadlines. I am always eager to expand my knowledge and tackle new challenges.Feel free to explore my portfolio to see some of the projects I've worked on."
-                  }{" "}
-                </Typography>{" "}
-                <br />
-                <Typography
-                  variant="p"
-                  component="p"
-                  sx={{
-                    textAlign: "justify",
-                    fontSize: "16px",
-                    lineHeight: "2rem",
-                  }}
-                >
-                  {" "}
-                  {
-                    "If you have any questions or would like to discuss a potential collaboration, I'd love to hear from you. "
-                  }{" "}
-                </Typography>{" "}
-                <br />
-                <Typography
-                  variant="p"
-                  component="p"
-                  sx={{
-                    textAlign: "justify",
-                    fontSize: "16px",
-                    lineHeight: "2rem",
-                  }}
-                >
-                  {" "}
-                  {
-                    "Let's create something amazing together!\n Feel free to customize and adapt this bio to reflect your own experiences, skills, and personality."
-                  }{" "}
-                </Typography>{" "}
-                <Box
-                  sx={{
-                    display: "flex",
-                    alignItems: "center",
-                    justifyContent: "flex-end",
-                    margin: "2.5rem 0 0 0",
-                  }}
-                >
-                  <Button
-                    sx={{
-                      "&:hover": {
-                        background: "transparent",
-                      },
-                      marginRight: 0,
-                    }}
-                    className="button button-3"
-                  >
-                    {" "}
-                    COntact{" "}
-                  </Button>{" "}
-                </Box>
-              </Grid>{" "}
-              <Grid
-                item
-                xs={12}
-                lg={6}
-                sx={{
-                  display: "flex",
-                  flexDirection: "column",
-                  padding: "0.5rem 2.5rem",
-                  margin:'0 0 5rem 0'
-                }}
-              >
-                <Typography
-                  variant="h5"
-                  component="h5"
-                  sx={{
-                    margin: "0",
-                    color: "transparent",
-                  }}
-                >
-                  {" "}
-                  Get in touch with me right now.{" "}
-                </Typography>
-
-                <Paper
-                  sx={{
-                    borderRadius: "32px",
-                    width: "100%",
-                    minHeight: "95vh",
-                    margin: {
-                      xs: "2.5rem 0",
-                    },
-                    backgroundImage: 'url("/avatar.jpg")',
-                    backgroundSize: "cover",
-                    backgroundPosition: "center",
-                    backgroundRepeat: "no-repeat",
-                    padding: "0.5rem 2.5rem",
-                  }}
-                />
-              </Grid>
-              <Grid
-                item
-                xs={12}
-                sx={{
-                  margin: "0 auto",
-                  color: "#eee",
-                  display: "flex",
-                  flexDirection: "column",
-                  padding: "0.5rem 2.5rem",
-                }}
-              >
-                <Typography
-                  variant="h5"
-                  component="h5"
-                  sx={{
-                    margin: "1.5rem 0",
-                  }}
-                >
-                  {" "}
-                  Get in touch with me right now.{" "}
-                </Typography>
-
-                <Paper
-                  elevation={3}
-                  sx={{
-                    borderRadius: "32px",
-                    background: "rgba(1,1,1,.1)",
-                    width: "100%",
-                    minHeight: "100vh",
-                    padding: "2.5rem",
-                    background: "rgba(5,5,5,.5)",
-                    display: "flex",
-                    flexDirection: "column",
-                    alignItems: "center",
-                    justifyContent: "center",
-                  }}
-                >
-                  <Box
-                    sx={{
-                      height: "120px",
-                      width: "75%",
-                      display: "flex",
-                      alignItems: "center",
-                      margin: "0 0 2.5rem 0",
-                    }}
-                  >
-                    <Box
-                      sx={{
-                        height: "150px",
-                        width: "150px",
-                backgroundColor: "transparent",
-                backgroundImage: 'url("https://ouch-cdn2.icons8.com/6LGJNxpqqSb52RP2xZCl8gJYbO_X66hSBxoZSClu59o/rs:fit:256:269/czM6Ly9pY29uczgu/b3VjaC1wcm9kLmFz/c2V0cy9zdmcvMjE3/LzU0MDcyZGQ5LTZk/NjYtNDZhZS05NzNj/LWViZWY2NTdjNmQ1/ZS5zdmc.png")',
-                backgroundSize: "contain",
-                backgroundRepeat:'no-repeat'
-                
-                      }}
-                    />{" "}
-                    <Stack
-                      sx={{
-                        padding: "0 12px",
-                      }}
-                    >
-                      <Typography
-                        sx={{
-                          fontSize: "32px",
-                          textAlign: "left",
-                          fontWeight: "400",
-                          color: "#eee",
-                        }}
-                      >
-                        {" "}
-                        Contact Me{" "}
-                      </Typography>{" "}
-                      <Typography
-                        sx={{
-                          fontSize: "18px",
-                          textAlign: "left",
-                          color: "#eee",
-                          fontWeight: "400",
-                          width: "100%",
-                        }}
-                      >
-                        {" "}
-                        Fill in form below and I will get back to you.{" "}
-                      </Typography>
-                    </Stack>
-                  </Box>
-
-                  <Box
-                    sx={{
-                      display: "flex",
-                      flexDirection: "column",
-                      alignItems: "flex-end",
-                      justifyContent: "center",
-                      width: "75%",
-                      margin: "0 auto",
-                    }}
-                  >
-                    <TextField
-                      fullWidth
-                      variant="standard"
-                      placeholder="Name"
-                      sx={{
-                        ...whiteStyles,
-                        padding: "1.5rem 0",
-                      }}
-                    />{" "}
-                    <TextField
-                      fullWidth
-                      variant="standard"
-                      placeholder="Surname"
-                      sx={{
-                        ...whiteStyles,
-                        padding: "1.5rem 0",
-                      }}
-                    />{" "}
-                    <TextField
-                      fullWidth
-                      variant="standard"
-                      placeholder="Email"
-                      sx={{
-                        ...whiteStyles,
-                        padding: "1.5rem 0",
-                      }}
-                    />{" "}
-                    <TextField
-                      fullWidth
-                      variant="standard"
-                      placeholder="Tel"
-                      sx={{
-                        ...whiteStyles,
-                        padding: "1.5rem 0",
-                      }}
-                    />{" "}
-                    <TextField
-                      fullWidth
-                      variant="standard"
-                      placeholder="Tel"
-                      sx={{
-                        ...whiteStyles,
-                        padding: "1.5rem 0",
-                      }}
-                    />{" "}
-                    <TextField
-                      fullWidth
-                      variant="standard"
-                      placeholder="Query"
-                      multiline
-                      rows="5"
-                      sx={{
-                        ...whiteStyles,
-                        padding: "1.5rem 0",
-                        margin: "0 0 2rem 0",
-                      }}
-                    />
-                    <Button
-                      sx={{
-                        "&:hover": {
-                          background: "transparent",
-                        },
-                      }}
-                      className="button button-3"
-                    >
-                      {" "}
-                      COntact{" "}
-                    </Button>
-                  </Box>
-                </Paper>
-              </Grid>{" "}
-            </Grid>{" "}
-          </Box>
+            <Typography
+              className="font-fam"
+              sx={{ fontSize: { xs: "14px", md: "16px" } }}
+            >
+              {
+                "ALX Software Engineering Student | Fullstack React , React Native Developer | Nextjs & Web Enterprise | C , Python , UI/UX"
+              }
+            </Typography>
+          </Grid>
+        </Grid>
+      </Box>
+      <Grid container>
+        <Grid
+          item
+          xs={12}
+          sx={{ padding: { xs: "21px 0", md: "0 " }, background: "" }}
+        >
+          <TabController />
+        </Grid>
+      </Grid>
     </Box>
   );
 }
 
-const whiteStyles = {
-  background: "",
-  padding: "2rem",
-  "& .MuiInputBase-root": {
-    borderBottom: "2px solid white",
-  },
-  "& .MuiInputBase-root.Mui-focused": {
-    "& > fieldset": {
-      borderBottom: "3px solid white",
-      color: "#40e0d0",
-    },
-  },
-  "& .MuiInputBase-root.Mui-focused": {
-    "& > fieldset": {
-      borderBottom: "3px solid white",
-      color: "#40e0d0",
-    },
-  },
+const ContactForm = () => {
+  const handleSubmit = (event) => {
+    event.preventDefault();
+    // Handle form submission logic here
+  };
+
+  return (
+    <Box
+      component="form"
+      onSubmit={handleSubmit}
+      sx={{
+        display: "flex",
+        flexDirection: "column",
+        alignItems: "flex-end",
+        p: "21px 6px",
+        width: "100%",
+      }}
+    >
+      <Typography
+        className="font-fam"
+        sx={{
+          textAlign: "left",
+          width: "100%",
+        }}
+      >
+        {"Get In Touch With Me Now."}
+      </Typography>
+      <Typography
+        className="font-fam"
+        sx={{
+          fontWeight: "600",
+          fontSize: "21px",
+          m: "12px 0",
+          textAlign: "left",
+          width: "100%",
+        }}
+      >
+        {"Contact Me"}
+      </Typography>
+
+      <Grid container>
+        <Grid item xs={12} md={8} sx={{ p: "0 12px", m: "0 auto" }}>
+          <Box
+            sx={{
+              width: "100%",
+              background: "red",
+              display: { xs: "block", md: "block" },
+              height: "100%",
+              minHeight: { xs: "10vh", md: "50vh" },
+              backgroundImage: 'url("/graphic-design/podcast.png")',
+              backgroundSize: "cover",
+              backgroundPosition: { xs: "top" },
+              // backgroundAttachment: { xs: "fixed", md: "scroll" },
+            }}
+          />
+        </Grid>
+        <Grid
+          item
+          xs={12}
+          md={8}
+          sx={{
+            p: "0 12px",
+            m: "0 auto",
+            display: "flex",
+            flexDirection: "column",
+            alignItems: "flex-end",
+          }}
+        >
+          <TextField
+            label="Name"
+            sx={{ ...TextFieldStyles }}
+            variant="outlined"
+            margin="normal"
+            required
+            fullWidth
+          />
+
+          <TextField
+            label="Email"
+            type="email"
+            sx={{ ...TextFieldStyles }}
+            variant="outlined"
+            margin="normal"
+            required
+            fullWidth
+          />
+
+          <TextField
+            label="Message"
+            multiline
+            rows={4}
+            sx={{ ...TextFieldStyles }}
+            variant="outlined"
+            margin="normal"
+            required
+            fullWidth
+          />
+
+          <Button
+            type="submit"
+            variant="contained"
+            sx={{ mt: 2, background: "#111" }}
+          >
+            Submit
+          </Button>
+        </Grid>
+      </Grid>
+    </Box>
+  );
 };
 
-const Achievements = () => {
+const Projects = () => {
   return (
     <Box>
-      <Box
-        sx={{
-          minHeight: "100vh",
-        }}
-      >
-        <Typography
-          sx={{
-            fontSize: "40px",
-            textAlign: "center",
-            margin: "2.5rem",
-          }}
+      <Grid container>
+        <Grid
+          item
+          xs={12}
+          sx={{ padding: { xs: "21px 0", md: "40px " }, background: "" }}
         >
-          {" "}
-          qualifications{" "}
-        </Typography>{" "}
-        <Typography
-          sx={{
-            fontSize: "20px",
-            textAlign: "center",
-            margin: "2.5rem",
-          }}
-        >
-          {" "}
-          legend{" "}
-        </Typography>
-        <Grid container>
-          <Grid
-            item
-            xs={4}
-            sx={{
-              padding: "2rem",
-              display: "flex",
-              alignItems: "center",
-              justifyContent: "space-between",
-            }}
-          >
-            <Typography
-              sx={{
-                fontSize: "16px",
-                textAlign: "center",
-                margin: "0",
-              }}
-            >
-              {" "}
-              Training Education{" "}
-            </Typography>{" "}
-            <Box
-              sx={{
-                height: "5px",
-                width: "75%",
-                background: "#AFE1AF",
-              }}
-            />{" "}
-          </Grid>
-
-          <Grid
-            item
-            xs={4}
-            sx={{
-              padding: "2rem",
-              display: "flex",
-              alignItems: "center",
-              justifyContent: "space-between",
-            }}
-          >
-            <Typography
-              sx={{
-                fontSize: "16px",
-                textAlign: "center",
-                margin: "0",
-              }}
-            >
-              {" "}
-              Work Experience{" "}
-            </Typography>{" "}
-            <Box
-              sx={{
-                height: "5px",
-                width: "75%",
-                background: "#D27D2D",
-              }}
-            />{" "}
-          </Grid>
-
-          <Grid
-            item
-            xs={4}
-            sx={{
-              padding: "2rem",
-              display: "flex",
-              alignItems: "center",
-              justifyContent: "space-between",
-            }}
-          >
-            <Typography
-              sx={{
-                fontSize: "16px",
-                textAlign: "center",
-                margin: "0",
-              }}
-            >
-              {" "}
-              Virtual internship{" "}
-            </Typography>{" "}
-            <Box
-              sx={{
-                height: "5px",
-                width: "75%",
-                background: "#AA98A9",
-              }}
-            />{" "}
-          </Grid>
-
-          <Grid
-            item
-            xs={12}
-            md={6}
-            sx={{
-              margin: { xs:"0 auto" , lg:'0' },
-              height: "320px",
-              padding: "2rem",
-            }}
-          >
-            <Paper
-              sx={{
-                padding: "2rem",
-                height: "100%",
-                background: "rgba(12,12,12,.5)",
-                color: "#eee",
-                borderBottom: "5px solid #AFE1AF",
-                display: "flex",
-                flexDirection: "column",
-                justifyContent: "space-evenly",
-              }}
-            >
-              <Typography
-                sx={{
-                  fontSize: {
-                    xs: "20px",
-                    lg: "24px",
-                  },
-                }}
-              >
-                {" "}
-                Forest High School Johannesburg{" "}
-              </Typography>{" "}
-              <Typography
-                sx={{
-                  fontSize: "26px",
-                  fontWeight: "400",
-                  position: "relative",
-                }}
-              >
-                {" "}
-                Matric Certificate{" "}
-              </Typography>{" "}
-              <Typography
-                sx={{
-                  fontSize: {
-                    xs: "20px",
-                    lg: "24px",
-                  },
-                }}
-              >
-                {" "}
-                2015 - 2019{" "}
-              </Typography>{" "}
-              <Typography
-                sx={{
-                  fontSize: {
-                    xs: "16px",
-                    lg: "18px",
-                  },
-                }}
-              >
-                {" "}
-                A certificate to show proof I completed my matric and passed
-                with marks liable for Diploma studies at any tertiary institute.{" "}
-              </Typography>{" "}
-            </Paper>{" "}
-          </Grid>
-
-          <Grid
-            item
-            xs={12}
-            md={6}
-            sx={{
-              margin: { xs:"0 auto" , lg:'0' },
-              height: "320px",
-              padding: "2rem",
-            }}
-          >
-            <Paper
-              sx={{
-                padding: "2rem",
-                height: "100%",
-                background: "rgba(12,12,12,.5)",
-                color: "#eee",
-                borderBottom: "5px solid #D27D2D",
-                display: "flex",
-                flexDirection: "column",
-                justifyContent: "space-evenly",
-              }}
-            >
-              <Typography
-                sx={{
-                  fontSize: {
-                    xs: "20px",
-                    lg: "24px",
-                  },
-                }}
-              >
-                {" "}
-                Active Media Industries{" "}
-              </Typography>{" "}
-              <Typography
-                sx={{
-                  fontSize: "26px",
-                  fontWeight: "400",
-                  position: "relative",
-                }}
-              >
-                {" "}
-                Intern Information Technology Department{" "}
-              </Typography>{" "}
-              <Typography
-                sx={{
-                  fontSize: {
-                    xs: "20px",
-                    lg: "24px",
-                  },
-                }}
-              >
-                {" "}
-                2020 - 2020{" "}
-              </Typography>{" "}
-              <Typography
-                sx={{
-                  fontSize: {
-                    xs: "16px",
-                    lg: "18px",
-                  },
-                }}
-              >
-                {" "}
-                I worked with already built databases on setting up accounts for
-                clients so that they could easily change prices, products and
-                specials{" "}
-              </Typography>{" "}
-            </Paper>
-          </Grid>
-
-          <Grid
-            item
-            xs={12}
-            md={6}
-            sx={{
-              margin: { xs:"0 auto" , lg:'0' },
-              height: "320px",
-              padding: "2rem",
-            }}
-          >
-            <Paper
-              sx={{
-                padding: "2rem",
-                height: "100%",
-                background: "rgba(12,12,12,.5)",
-                color: "#eee",
-                borderBottom: "5px solid #AFE1AF",
-                display: "flex",
-                flexDirection: "column",
-                justifyContent: "space-evenly",
-              }}
-            >
-              <Typography
-                sx={{
-                  fontSize: {
-                    xs: "20px",
-                    lg: "24px",
-                  },
-                }}
-              >
-                {" "}
-                Linkedin Learning{" "}
-              </Typography>{" "}
-              <Typography
-                sx={{
-                  fontSize: "26px",
-                  fontWeight: "400",
-                  position: "relative",
-                }}
-              >
-                {" "}
-                Programming Foundations: Fundamentals{" "}
-              </Typography>{" "}
-              <Typography
-                sx={{
-                  fontSize: {
-                    xs: "20px",
-                    lg: "24px",
-                  },
-                }}
-              >
-                {" "}
-                2020{" "}
-              </Typography>{" "}
-              <Typography
-                sx={{
-                  fontSize: {
-                    xs: "16px",
-                    lg: "18px",
-                  },
-                }}
-              >
-                {" "}
-                A certificate to show proof I completed Programming Foundations:
-                Fundamentals with Linkedin Learning during my year at the
-                internship.{" "}
-              </Typography>{" "}
-            </Paper>{" "}
-          </Grid>
-
-          <Grid
-            item
-            xs={12}
-            md={6}
-            sx={{
-              margin: { xs:"0 auto" , lg:'0' },
-              height: "320px",
-              padding: "2rem",
-            }}
-          >
-            <Paper
-              sx={{
-                padding: "2rem",
-                height: "100%",
-                background: "rgba(12,12,12,.5)",
-                color: "#eee",
-                borderBottom: "5px solid #AFE1AF",
-                display: "flex",
-                flexDirection: "column",
-                justifyContent: "space-evenly",
-              }}
-            >
-              <Typography
-                sx={{
-                  fontSize: {
-                    xs: "20px",
-                    lg: "24px",
-                  },
-                }}
-              >
-                {" "}
-                Linkedin Learning{" "}
-              </Typography>{" "}
-              <Typography
-                sx={{
-                  fontSize: "26px",
-                  fontWeight: "400",
-                  position: "relative",
-                }}
-              >
-                {" "}
-                Programming Foundations: Databases{" "}
-              </Typography>{" "}
-              <Typography
-                sx={{
-                  fontSize: {
-                    xs: "20px",
-                    lg: "24px",
-                  },
-                }}
-              >
-                {" "}
-                2020{" "}
-              </Typography>{" "}
-              <Typography
-                sx={{
-                  fontSize: {
-                    xs: "16px",
-                    lg: "18px",
-                  },
-                }}
-              >
-                {" "}
-                A certificate to show proof I completed Programming Foundations:
-                Databases with Linkedin Learning during my year at the
-                internship.{" "}
-              </Typography>{" "}
-            </Paper>{" "}
-          </Grid>
-
-          <Grid
-            item
-            xs={12}
-            md={6}
-            sx={{
-              margin: { xs:"0 auto" , lg:'0' },
-              height: "320px",
-              padding: "2rem",
-            }}
-          >
-            <Paper
-              sx={{
-                padding: "2rem",
-                height: "100%",
-                background: "rgba(12,12,12,.5)",
-                color: "#eee",
-                borderBottom: "5px solid #AFE1AF",
-                display: "flex",
-                flexDirection: "column",
-                justifyContent: "space-evenly",
-              }}
-            >
-              <Typography
-                sx={{
-                  fontSize: {
-                    xs: "20px",
-                    lg: "24px",
-                  },
-                }}
-              >
-                {" "}
-                Linkedin Learning{" "}
-              </Typography>{" "}
-              <Typography
-                sx={{
-                  fontSize: "26px",
-                  fontWeight: "400",
-                  position: "relative",
-                }}
-              >
-                {" "}
-                Succeeding in Web Development: Full Stack and Front End{" "}
-              </Typography>{" "}
-              <Typography
-                sx={{
-                  fontSize: {
-                    xs: "20px",
-                    lg: "24px",
-                  },
-                }}
-              >
-                {" "}
-                2020{" "}
-              </Typography>{" "}
-              <Typography
-                sx={{
-                  fontSize: {
-                    xs: "16px",
-                    lg: "18px",
-                  },
-                }}
-              >
-                {" "}
-                A certificate to show proof I completed Succeeding in Web
-                Development: Full Stack and Front End with Linkedin Learning
-                during my year at the internship.{" "}
-              </Typography>{" "}
-            </Paper>{" "}
-          </Grid>
-
-          <Grid
-            item
-            xs={12}
-            md={6}
-            sx={{
-              margin: { xs:"0 auto" , lg:'0' },
-              height: "320px",
-              padding: "2rem",
-            }}
-          >
-            <Paper
-              sx={{
-                padding: "2rem",
-                height: "100%",
-                background: "rgba(12,12,12,.5)",
-                color: "#eee",
-                borderBottom: "5px solid #AFE1AF",
-                display: "flex",
-                flexDirection: "column",
-                justifyContent: "space-evenly",
-              }}
-            >
-              <Typography
-                sx={{
-                  fontSize: {
-                    xs: "20px",
-                    lg: "24px",
-                  },
-                }}
-              >
-                {" "}
-                Linkedin Learning{" "}
-              </Typography>{" "}
-              <Typography
-                sx={{
-                  fontSize: "26px",
-                  fontWeight: "400",
-                  position: "relative",
-                }}
-              >
-                {" "}
-                HTML Essential Training{" "}
-              </Typography>{" "}
-              <Typography
-                sx={{
-                  fontSize: {
-                    xs: "20px",
-                    lg: "24px",
-                  },
-                }}
-              >
-                {" "}
-                2020{" "}
-              </Typography>{" "}
-              <Typography
-                sx={{
-                  fontSize: {
-                    xs: "16px",
-                    lg: "18px",
-                  },
-                }}
-              >
-                {" "}
-                A certificate to show proof I completed HTML Essential Training
-                with Linkedin Learning during my year at the internship.{" "}
-              </Typography>{" "}
-            </Paper>{" "}
-          </Grid>
-
-          <Grid
-            item
-            xs={12}
-            md={6}
-            sx={{
-              margin: { xs:"0 auto" , lg:'0' },
-              height: "320px",
-              padding: "2rem",
-            }}
-          >
-            <Paper
-              sx={{
-                padding: "2rem",
-                height: "100%",
-                background: "rgba(12,12,12,.5)",
-                color: "#eee",
-                borderBottom: "5px solid #AFE1AF",
-                display: "flex",
-                flexDirection: "column",
-                justifyContent: "space-evenly",
-              }}
-            >
-              <Typography
-                sx={{
-                  fontSize: {
-                    xs: "20px",
-                    lg: "24px",
-                  },
-                }}
-              >
-                {" "}
-                Linkedin Learning{" "}
-              </Typography>{" "}
-              <Typography
-                sx={{
-                  fontSize: "26px",
-                  fontWeight: "400",
-                  position: "relative",
-                }}
-              >
-                {" "}
-                CSS Essential Training{" "}
-              </Typography>{" "}
-              <Typography
-                sx={{
-                  fontSize: {
-                    xs: "20px",
-                    lg: "24px",
-                  },
-                }}
-              >
-                {" "}
-                2020{" "}
-              </Typography>{" "}
-              <Typography
-                sx={{
-                  fontSize: {
-                    xs: "16px",
-                    lg: "18px",
-                  },
-                }}
-              >
-                {" "}
-                A certificate to show proof I completed CSS Essential Training
-                with Linkedin Learning during my year at the internship.{" "}
-              </Typography>{" "}
-            </Paper>{" "}
-          </Grid>
-
-          <Grid
-            item
-            xs={12}
-            md={6}
-            sx={{
-              margin: { xs:"0 auto" , lg:'0' },
-              height: "320px",
-              padding: "2rem",
-            }}
-          >
-            <Paper
-              sx={{
-                padding: "2rem",
-                height: "100%",
-                background: "rgba(12,12,12,.5)",
-                color: "#eee",
-                borderBottom: "5px solid #AFE1AF",
-                display: "flex",
-                flexDirection: "column",
-                justifyContent: "space-evenly",
-              }}
-            >
-              <Typography
-                sx={{
-                  fontSize: {
-                    xs: "20px",
-                    lg: "24px",
-                  },
-                }}
-              >
-                {" "}
-                Linkedin Learning{" "}
-              </Typography>{" "}
-              <Typography
-                sx={{
-                  fontSize: "26px",
-                  fontWeight: "400",
-                  position: "relative",
-                }}
-              >
-                {" "}
-                Javascript Essential Training{" "}
-              </Typography>{" "}
-              <Typography
-                sx={{
-                  fontSize: {
-                    xs: "20px",
-                    lg: "24px",
-                  },
-                }}
-              >
-                {" "}
-                2020{" "}
-              </Typography>{" "}
-              <Typography
-                sx={{
-                  fontSize: {
-                    xs: "16px",
-                    lg: "18px",
-                  },
-                }}
-              >
-                {" "}
-                A certificate to show proof I completed Javascript Essential
-                Training with Linkedin Learning during my year at the
-                internship.{" "}
-              </Typography>{" "}
-            </Paper>{" "}
-          </Grid>
-
-          <Grid
-            item
-            xs={12}
-            md={6}
-            sx={{
-              margin: { xs:"0 auto" , lg:'0' },
-              height: "320px",
-              padding: "2rem",
-            }}
-          >
-            <Paper
-              sx={{
-                padding: "2rem",
-                height: "100%",
-                background: "rgba(12,12,12,.5)",
-                color: "#eee",
-                borderBottom: "5px solid #AFE1AF",
-                display: "flex",
-                flexDirection: "column",
-                justifyContent: "space-evenly",
-              }}
-            >
-              <Typography
-                sx={{
-                  fontSize: {
-                    xs: "20px",
-                    lg: "24px",
-                  },
-                }}
-              >
-                {" "}
-                Simplilearn{" "}
-              </Typography>{" "}
-              <Typography
-                sx={{
-                  fontSize: "26px",
-                  fontWeight: "400",
-                  position: "relative",
-                }}
-              >
-                {" "}
-                ReactJs for Beginners{" "}
-              </Typography>{" "}
-              <Typography
-                sx={{
-                  fontSize: {
-                    xs: "20px",
-                    lg: "24px",
-                  },
-                }}
-              >
-                {" "}
-                2022{" "}
-              </Typography>{" "}
-              <Typography
-                sx={{
-                  fontSize: {
-                    xs: "16px",
-                    lg: "18px",
-                  },
-                }}
-              >
-                {" "}
-                A certificate to show proof I completed ReactJs for Beginners
-                with SimpliLearn during my first year as a developer.{" "}
-              </Typography>{" "}
-            </Paper>{" "}
-          </Grid>
-
-          <Grid
-            item
-            xs={12}
-            md={6}
-            sx={{
-              margin: { xs:"0 auto" , lg:'0' },
-              height: "320px",
-              padding: "2rem",
-            }}
-          >
-            <Paper
-              sx={{
-                padding: "2rem",
-                height: "100%",
-                background: "rgba(12,12,12,.5)",
-                color: "#eee",
-                borderBottom: "5px solid #D27D2D",
-                display: "flex",
-                flexDirection: "column",
-                justifyContent: "space-evenly",
-              }}
-            >
-              <Typography
-                sx={{
-                  fontSize: {
-                    xs: "20px",
-                    lg: "24px",
-                  },
-                }}
-              >
-                {" "}
-                Active Media Industries{" "}
-              </Typography>{" "}
-              <Typography
-                sx={{
-                  fontSize: "26px",
-                  fontWeight: "400",
-                  position: "relative",
-                }}
-              >
-                {" "}
-                Web Developer{" "}
-              </Typography>{" "}
-              <Typography
-                sx={{
-                  fontSize: {
-                    xs: "20px",
-                    lg: "24px",
-                  },
-                }}
-              >
-                {" "}
-                Jan 2021 - March 2022{" "}
-              </Typography>{" "}
-              <Typography
-                sx={{
-                  fontSize: {
-                    xs: "16px",
-                    lg: "18px",
-                  },
-                }}
-              >
-                {" "}
-                Throughout my experience here I worked hand in hand with clients
-                to maintain websites and deliver exceptional services to their
-                clients as well.{" "}
-              </Typography>{" "}
-            </Paper>
-          </Grid>
-
-          <Grid
-            item
-            xs={12}
-            md={6}
-            sx={{
-              margin: { xs:"0 auto" , lg:'0' },
-              height: "320px",
-              padding: "2rem",
-            }}
-          >
-            <Paper
-              sx={{
-                padding: "2rem",
-                height: "100%",
-                background: "rgba(12,12,12,.5)",
-                color: "#eee",
-                borderBottom: "5px solid #D27D2D",
-                display: "flex",
-                flexDirection: "column",
-                justifyContent: "space-evenly",
-              }}
-            >
-              <Typography
-                sx={{
-                  fontSize: {
-                    xs: "20px",
-                    lg: "24px",
-                  },
-                }}
-              >
-                {" "}
-                Active Media Industries{" "}
-              </Typography>{" "}
-              <Typography
-                sx={{
-                  fontSize: "26px",
-                  fontWeight: "400",
-                  position: "relative",
-                }}
-              >
-                {" "}
-                Senior Web Developer{" "}
-              </Typography>{" "}
-              <Typography
-                sx={{
-                  fontSize: {
-                    xs: "20px",
-                    lg: "24px",
-                  },
-                }}
-              >
-                {" "}
-                March 2022 - Dec 2022{" "}
-              </Typography>{" "}
-              <Typography
-                sx={{
-                  fontSize: {
-                    xs: "16px",
-                    lg: "18px",
-                  },
-                }}
-              >
-                {" "}
-                I became a Senior Web Developer in April of 2022 and at this
-                role I was able to run a team of 9 developers and issued out
-                training to them in various ways.{" "}
-              </Typography>{" "}
-            </Paper>
-          </Grid>
-
-          <Grid
-            item
-            xs={12}
-            md={6}
-            sx={{
-              margin: { xs:"0 auto" , lg:'0' },
-              height: "320px",
-              padding: "2rem",
-            }}
-          >
-            <Paper
-              sx={{
-                padding: "2rem",
-                height: "100%",
-                background: "rgba(12,12,12,.5)",
-                color: "#eee",
-                borderBottom: "5px solid #AFE1AF",
-                display: "flex",
-                flexDirection: "column",
-                justifyContent: "space-evenly",
-              }}
-            >
-              <Typography
-                sx={{
-                  fontSize: {
-                    xs: "20px",
-                    lg: "24px",
-                  },
-                }}
-              >
-                {" "}
-                freeCodeCamp{" "}
-              </Typography>{" "}
-              <Typography
-                sx={{
-                  fontSize: "26px",
-                  fontWeight: "400",
-                  position: "relative",
-                }}
-              >
-                {" "}
-                Certificate, Responsive Web Design{" "}
-              </Typography>{" "}
-              <Typography
-                sx={{
-                  fontSize: {
-                    xs: "20px",
-                    lg: "24px",
-                  },
-                }}
-              >
-                {" "}
-                2021 - 2021{" "}
-              </Typography>{" "}
-              <Typography
-                sx={{
-                  fontSize: {
-                    xs: "16px",
-                    lg: "18px",
-                  },
-                }}
-              >
-                {" "}
-                Here I learnt how to use html, css & bootstrap to build various
-                front - end interfaces that are responsive{" "}
-              </Typography>{" "}
-            </Paper>
-          </Grid>
-
-          <Grid
-            item
-            xs={12}
-            md={6}
-            sx={{
-              margin: { xs:"0 auto" , lg:'0' },
-              height: "320px",
-              padding: "2rem",
-            }}
-          >
-            <Paper
-              sx={{
-                padding: "2rem",
-                height: "100%",
-                background: "rgba(12,12,12,.5)",
-                color: "#eee",
-                borderBottom: "5px solid #AFE1AF",
-                display: "flex",
-                flexDirection: "column",
-                justifyContent: "space-evenly",
-              }}
-            >
-              <Typography
-                sx={{
-                  fontSize: {
-                    xs: "20px",
-                    lg: "24px",
-                  },
-                }}
-              >
-                {" "}
-                freeCodeCamp{" "}
-              </Typography>{" "}
-              <Typography
-                sx={{
-                  fontSize: "26px",
-                  fontWeight: "400",
-                  position: "relative",
-                }}
-              >
-                {" "}
-                Certificate, JavaScript Data Structures{" "}
-              </Typography>
-              <Typography
-                sx={{
-                  fontSize: {
-                    xs: "20px",
-                    lg: "24px",
-                  },
-                }}
-              >
-                {" "}
-                2021 - 2021{" "}
-              </Typography>{" "}
-              <Typography
-                sx={{
-                  fontSize: {
-                    xs: "16px",
-                    lg: "18px",
-                  },
-                }}
-              >
-                {" "}
-                Javascript Basics to Advanced{" "}
-              </Typography>{" "}
-              <Typography
-                sx={{
-                  fontSize: {
-                    xs: "16px",
-                    lg: "18px",
-                  },
-                }}
-              >
-                {" "}
-                Array handling and Algorithms.{" "}
-              </Typography>{" "}
-            </Paper>
-          </Grid>
-
-          <Grid
-            item
-            xs={12}
-            md={6}
-            sx={{
-              margin: { xs:"0 auto" , lg:'0' },
-              height: "320px",
-              padding: "2rem",
-            }}
-          >
-            <Paper
-              sx={{
-                padding: "2rem",
-                height: "100%",
-                background: "rgba(12,12,12,.5)",
-                color: "#eee",
-                borderBottom: "5px solid #AFE1AF",
-                display: "flex",
-                flexDirection: "column",
-                justifyContent: "space-evenly",
-              }}
-            >
-              <Typography
-                sx={{
-                  fontSize: {
-                    xs: "20px",
-                    lg: "24px",
-                  },
-                }}
-              >
-                {" "}
-                IT Academy - School{" "}
-              </Typography>{" "}
-              <Typography
-                sx={{
-                  fontSize: "26px",
-                  fontWeight: "400",
-                  position: "relative",
-                }}
-              >
-                {" "}
-                Computer Software and Media Applications{" "}
-              </Typography>{" "}
-              <Typography
-                sx={{
-                  fontSize: {
-                    xs: "20px",
-                    lg: "24px",
-                  },
-                }}
-              >
-                {" "}
-                May 2021 - 2022{" "}
-              </Typography>
-              <Typography
-                sx={{
-                  fontSize: {
-                    xs: "16px",
-                    lg: "18px",
-                  },
-                }}
-              >
-                {" "}
-                A course in software development which teaches Programming
-                Principles, AWS, Microsoft and other various technologies such
-                as c #, java and web development{" "}
-              </Typography>{" "}
-            </Paper>
-          </Grid>
-
-          <Grid
-            item
-            xs={12}
-            md={6}
-            sx={{
-              margin: { xs:"0 auto" , lg:'0' },
-              height: "320px",
-              padding: "2rem",
-            }}
-          >
-            <Paper
-              sx={{
-                padding: "2rem",
-                height: "100%",
-                background: "rgba(12,12,12,.5)",
-                color: "#eee",
-                borderBottom: "5px solid #AA98A9",
-                display: "flex",
-                flexDirection: "column",
-                justifyContent: "space-evenly",
-              }}
-            >
-              <Typography
-                sx={{
-                  fontSize: {
-                    xs: "20px",
-                    lg: "24px",
-                  },
-                }}
-              >
-                {" "}
-                Moreton Bay Regional Council{" "}
-              </Typography>{" "}
-              <Typography
-                sx={{
-                  fontSize: "26px",
-                  fontWeight: "400",
-                  position: "relative",
-                }}
-              >
-                {" "}
-                Entrepreneurship & Innovation: Web Development Virtual
-                Experience Program{" "}
-              </Typography>{" "}
-              <Typography
-                sx={{
-                  fontSize: {
-                    xs: "20px",
-                    lg: "24px",
-                  },
-                }}
-              >
-                {" "}
-                2023{" "}
-              </Typography>{" "}
-              <Typography
-                sx={{
-                  fontSize: {
-                    xs: "16px",
-                    lg: "18px",
-                  },
-                }}
-              >
-                {" "}
-                A certificate for ux / ui design from bp from a virtual
-                internship program from the website TheForage.com{" "}
-              </Typography>
-            </Paper>{" "}
-          </Grid>
-
-          <Grid
-            item
-            xs={12}
-            md={6}
-            sx={{
-              margin: { xs:"0 auto" , lg:'0' },
-              height: "320px",
-              padding: "2rem",
-            }}
-          >
-            <Paper
-              sx={{
-                padding: "2rem",
-                height: "100%",
-                background: "rgba(12,12,12,.5)",
-                color: "#eee",
-                borderBottom: "5px solid #AA98A9",
-                display: "flex",
-                flexDirection: "column",
-                justifyContent: "space-evenly",
-              }}
-            >
-              <Typography
-                sx={{
-                  fontSize: {
-                    xs: "20px",
-                    lg: "24px",
-                  },
-                }}
-              >
-                {" "}
-                Accenture{" "}
-              </Typography>{" "}
-              <Typography
-                sx={{
-                  fontSize: "26px",
-                  fontWeight: "400",
-                  position: "relative",
-                }}
-              >
-                {" "}
-                Accenture Nordics Developer{" "}
-              </Typography>{" "}
-              <Typography
-                sx={{
-                  fontSize: {
-                    xs: "20px",
-                    lg: "24px",
-                  },
-                }}
-              >
-                {" "}
-                2023{" "}
-              </Typography>{" "}
-              <Typography
-                sx={{
-                  fontSize: {
-                    xs: "16px",
-                    lg: "18px",
-                  },
-                }}
-              >
-                {" "}
-                A certificate for ux / ui design from bp from a virtual
-                internship program from the website TheForage.com{" "}
-              </Typography>
-            </Paper>{" "}
-          </Grid>
-
-          <Grid
-            item
-            xs={12}
-            md={6}
-            sx={{
-              margin: { xs:"0 auto" , lg:'0' },
-              height: "320px",
-              padding: "2rem",
-            }}
-          >
-            <Paper
-              sx={{
-                padding: "2rem",
-                height: "100%",
-                background: "rgba(12,12,12,.5)",
-                color: "#eee",
-                borderBottom: "5px solid #AA98A9",
-                display: "flex",
-                flexDirection: "column",
-                justifyContent: "space-evenly",
-              }}
-            >
-              <Typography
-                sx={{
-                  fontSize: {
-                    xs: "20px",
-                    lg: "24px",
-                  },
-                }}
-              >
-                {" "}
-                Cognizant{" "}
-              </Typography>{" "}
-              <Typography
-                sx={{
-                  fontSize: "26px",
-                  fontWeight: "400",
-                  position: "relative",
-                }}
-              >
-                {" "}
-                Agile Methodology Virtual Experience Program{" "}
-              </Typography>{" "}
-              <Typography
-                sx={{
-                  fontSize: {
-                    xs: "20px",
-                    lg: "24px",
-                  },
-                }}
-              >
-                {" "}
-                2023{" "}
-              </Typography>{" "}
-              <Typography
-                sx={{
-                  fontSize: {
-                    xs: "16px",
-                    lg: "18px",
-                  },
-                }}
-              >
-                {" "}
-                A certificate for ux / ui design from bp from a virtual
-                internship program from the website TheForage.com{" "}
-              </Typography>
-            </Paper>{" "}
-          </Grid>
-
-          <Grid
-            item
-            xs={12}
-            md={6}
-            sx={{
-              margin: { xs:"0 auto" , lg:'0' },
-              height: "320px",
-              padding: "2rem",
-            }}
-          >
-            <Paper
-              sx={{
-                padding: "2rem",
-                height: "100%",
-                background: "rgba(12,12,12,.5)",
-                color: "#eee",
-                borderBottom: "5px solid #AA98A9",
-                display: "flex",
-                flexDirection: "column",
-                justifyContent: "space-evenly",
-              }}
-            >
-              <Typography
-                sx={{
-                  fontSize: {
-                    xs: "20px",
-                    lg: "24px",
-                  },
-                }}
-              >
-                {" "}
-                BP{" "}
-              </Typography>{" "}
-              <Typography
-                sx={{
-                  fontSize: "26px",
-                  fontWeight: "400",
-                  position: "relative",
-                }}
-              >
-                {" "}
-                Digital Design & UX Virtual Experience Programme{" "}
-              </Typography>{" "}
-              <Typography
-                sx={{
-                  fontSize: {
-                    xs: "20px",
-                    lg: "24px",
-                  },
-                }}
-              >
-                {" "}
-                2023{" "}
-              </Typography>{" "}
-              <Typography
-                sx={{
-                  fontSize: {
-                    xs: "16px",
-                    lg: "18px",
-                  },
-                }}
-              >
-                {" "}
-                A certificate for ux / ui design from bp from a virtual
-                internship program from the website TheForage.com{" "}
-              </Typography>{" "}
-            </Paper>{" "}
-          </Grid>
-
-          <Grid
-            item
-            xs={12}
-            md={6}
-            sx={{
-              margin: { xs:"0 auto" , lg:'0' },
-              height: "320px",
-              padding: "2rem",
-            }}
-          >
-            <Paper
-              sx={{
-                padding: "2rem",
-                height: "100%",
-                background: "rgba(12,12,12,.5)",
-                color: "#eee",
-                borderBottom: "5px solid #AFE1AF",
-                display: "flex",
-                flexDirection: "column",
-                justifyContent: "space-evenly",
-              }}
-            >
-              <Typography
-                sx={{
-                  fontSize: {
-                    xs: "20px",
-                    lg: "24px",
-                  },
-                }}
-              >
-                ALX{" "}
-              </Typography>{" "}
-              <Typography
-                sx={{
-                  fontSize: "26px",
-                  fontWeight: "400",
-                  position: "relative",
-                }}
-              >
-                Student, Computer Software Engineerin{" "}
-              </Typography>{" "}
-              <Typography
-                sx={{
-                  fontSize: {
-                    xs: "20px",
-                    lg: "24px",
-                  },
-                }}
-              >
-                Jan 2023 - Present{" "}
-              </Typography>{" "}
-              <Typography
-                sx={{
-                  fontSize: {
-                    xs: "16px",
-                    lg: "18px",
-                  },
-                }}
-              >
-                {" "}
-                I am currenty enrolled at ALX to their Software Engineering
-                Program.This is a online course covering technologies ranging
-                from C, Bash and Javascript{" "}
-              </Typography>{" "}
-            </Paper>
-          </Grid>
-
-          <Grid
-            item
-            xs={12}
-            md={6}
-            sx={{
-              margin: { xs:"0 auto" , lg:'0' },
-              height: "320px",
-              padding: "2rem",
-            }}
-          >
-            <Paper
-              sx={{
-                padding: "2rem",
-                height: "100%",
-                background: "rgba(12,12,12,.5)",
-                color: "#eee",
-                borderBottom: "5px solid #D27D2D",
-                display: "flex",
-                flexDirection: "column",
-                justifyContent: "space-evenly",
-              }}
-            >
-              <Typography
-                sx={{
-                  fontSize: {
-                    xs: "20px",
-                    lg: "24px",
-                  },
-                }}
-              >
-                {" "}
-                Atomus Dev{" "}
-              </Typography>{" "}
-              <Typography
-                sx={{
-                  fontSize: "26px",
-                  fontWeight: "400",
-                  position: "relative",
-                }}
-              >
-                {" "}
-                Full Stack Developer{" "}
-              </Typography>{" "}
-              <Typography
-                sx={{
-                  fontSize: {
-                    xs: "20px",
-                    lg: "24px",
-                  },
-                }}
-              >
-                {" "}
-                March 2022 - Dec 2022{" "}
-              </Typography>{" "}
-              <Typography
-                sx={{
-                  fontSize: {
-                    xs: "14px",
-                    lg: "16px",
-                  },
-                }}
-              >
-                {" "}
-                Here I worked as a Fullstack developer leading the healm and
-                delivering exceptional services to clients ranging from:
-                -Project Management and Team Leader - Graphic Design - SEO -
-                Email Marketing. - Web Design and Development - Banner and Ads
-                Design - Digital Marketing{" "}
-              </Typography>{" "}
-            </Paper>
-          </Grid>
+          {"Boom Projects Now"}
         </Grid>
-      </Box>{" "}
+      </Grid>
+    </Box>
+  );
+};
+
+const TabController = () => {
+  const [value, setValue] = useState("about");
+
+  const handleChange = (newValue) => {
+    setValue(newValue);
+  };
+
+  const TabStyles = {
+    color: "#111",
+    fontSize: { xs: "12px", md: "12px" },
+    margin: { xs: "0 auto", md: "0 6px" },
+    transition: "500ms",
+  };
+
+  return (
+    <Box sx={{ m: "0 auto", width: "90%", minHeight: "75vh" }}>
       <Box
+        value={value}
         sx={{
-          minHeight: "100vh",
-          marginTop: "7rem",
+          flexWrap: { xs: "wrap", sm: "wrap" },
+          display: "flex",
+          justifyContent: { xs: "space-evenly", md: "left" },
+          width: "100%",
+          // background: "rgba(1,1,1,.3)",
+          m: "0 auto",
         }}
+        onChange={handleChange}
+        aria-label="my tabs"
       >
-        <Typography
-          sx={{
-            fontSize: "40px",
-            textAlign: "center",
-            margin: "2.5rem",
+        <Button
+          onClick={() => {
+            handleChange("about");
           }}
+          sx={{
+            ...TabStyles,
+            borderBottom:
+              value === "about" ? "5px solid #111" : "5px solid transparent",
+          }}
+          label=""
         >
           {" "}
-          achievements{" "}
-        </Typography>{" "}
-        <Grid container>
-          <Grid
-            item
-            xs={12}
-            md={6}
-            sx={{
-              margin: { xs:"0 auto" , lg:'0' },
-              height: "320px",
-              padding: "2rem",
-            }}
-          >
-            <Paper
-              sx={{
-                padding: "2rem",
-                height: "100%",
-                background: "rgba(12,12,12,.5)",
-                color: "#eee",
-                borderBottom: "5px solid #AFE1AF",
-                display: "flex",
-                flexDirection: "column",
-                justifyContent: "space-evenly",
-              }}
-            >
-              <Typography
-                sx={{
-                  fontSize: {
-                    xs: "20px",
-                    lg: "24px",
-                  },
-                }}
-              >
-                {" "}
-                spell it - white{" "}
-              </Typography>{" "}
-              <Typography
-                sx={{
-                  fontSize: "26px",
-                  fontWeight: "400",
-                  position: "relative",
-                }}
-              >
-                {" "}
-                Nedbank{" "}
-              </Typography>{" "}
-              <Typography
-                sx={{
-                  fontSize: {
-                    xs: "20px",
-                    lg: "24px",
-                  },
-                }}
-              >
-                {" "}
-                2012{" "}
-              </Typography>{" "}
-              <Typography
-                sx={{
-                  fontSize: {
-                    xs: "16px",
-                    lg: "18px",
-                  },
-                }}
-              >
-                {" "}
-                This is a certificate to show that I part - took in chess
-                lessons and a tournament in Grade 5 amongst my school
-                learners.This was sponsors by Nedbank.{" "}
-              </Typography>{" "}
-            </Paper>
-          </Grid>
-
-          <Grid
-            item
-            xs={12}
-            md={6}
-            sx={{
-              margin: { xs:"0 auto" , lg:'0' },
-              height: "320px",
-              padding: "2rem",
-            }}
-          >
-            <Paper
-              sx={{
-                padding: "2rem",
-                height: "100%",
-                background: "rgba(12,12,12,.5)",
-                color: "#eee",
-                borderBottom: "5px solid #AFE1AF",
-                display: "flex",
-                flexDirection: "column",
-                justifyContent: "space-evenly",
-              }}
-            >
-              <Typography
-                sx={{
-                  fontSize: {
-                    xs: "20px",
-                    lg: "24px",
-                  },
-                }}
-              >
-                {" "}
-                Top 10 Achiever - LO{" "}
-              </Typography>{" "}
-              <Typography
-                sx={{
-                  fontSize: "26px",
-                  fontWeight: "400",
-                  position: "relative",
-                }}
-              >
-                {" "}
-                Forest High School{" "}
-              </Typography>{" "}
-              <Typography
-                sx={{
-                  fontSize: {
-                    xs: "20px",
-                    lg: "24px",
-                  },
-                }}
-              >
-                {" "}
-                2016{" "}
-              </Typography>{" "}
-              <Typography
-                sx={{
-                  fontSize: {
-                    xs: "16px",
-                    lg: "18px",
-                  },
-                }}
-              >
-                {" "}
-                A certificate to show prroof that I served as a Deputy Headboy
-                and responsible for all the other prefects and school
-                disciplinary team.{" "}
-              </Typography>{" "}
-            </Paper>
-          </Grid>
-
-          <Grid
-            item
-            xs={12}
-            md={6}
-            sx={{
-              margin: { xs:"0 auto" , lg:'0' },
-              height: "320px",
-              padding: "2rem",
-            }}
-          >
-            <Paper
-              sx={{
-                padding: "2rem",
-                height: "100%",
-                background: "rgba(12,12,12,.5)",
-                color: "#eee",
-                borderBottom: "5px solid #AFE1AF",
-                display: "flex",
-                flexDirection: "column",
-                justifyContent: "space-evenly",
-              }}
-            >
-              <Typography
-                sx={{
-                  fontSize: {
-                    xs: "20px",
-                    lg: "24px",
-                  },
-                }}
-              >
-                {" "}
-                Chess{" "}
-              </Typography>{" "}
-              <Typography
-                sx={{
-                  fontSize: "26px",
-                  fontWeight: "400",
-                  position: "relative",
-                }}
-              >
-                {" "}
-                Nedbank{" "}
-              </Typography>{" "}
-              <Typography
-                sx={{
-                  fontSize: {
-                    xs: "20px",
-                    lg: "24px",
-                  },
-                }}
-              >
-                {" "}
-                2013{" "}
-              </Typography>
-              <Typography
-                sx={{
-                  fontSize: {
-                    xs: "16px",
-                    lg: "18px",
-                  },
-                }}
-              >
-                {" "}
-                A certificate to show prroof that I served as a Deputy Headboy
-                and responsible for all the other prefects and school
-                disciplinary team.{" "}
-              </Typography>{" "}
-            </Paper>
-          </Grid>
-
-          <Grid
-            item
-            xs={12}
-            md={6}
-            sx={{
-              margin: { xs:"0 auto" , lg:'0' },
-              height: "320px",
-              padding: "2rem",
-            }}
-          >
-            <Paper
-              sx={{
-                padding: "2rem",
-                height: "100%",
-                background: "rgba(12,12,12,.5)",
-                color: "#eee",
-                borderBottom: "5px solid #AFE1AF",
-                display: "flex",
-                flexDirection: "column",
-                justifyContent: "space-evenly",
-              }}
-            >
-              <Typography
-                sx={{
-                  fontSize: {
-                    xs: "20px",
-                    lg: "24px",
-                  },
-                }}
-              >
-                {" "}
-                Sports Award - Chess{" "}
-              </Typography>{" "}
-              <Typography
-                sx={{
-                  fontSize: "26px",
-                  fontWeight: "400",
-                  position: "relative",
-                }}
-              >
-                {" "}
-                Turffontein Primary School{" "}
-              </Typography>{" "}
-              <Typography
-                sx={{
-                  fontSize: {
-                    xs: "20px",
-                    lg: "24px",
-                  },
-                }}
-              >
-                {" "}
-                2014{" "}
-              </Typography>{" "}
-              <Typography
-                sx={{
-                  fontSize: {
-                    xs: "16px",
-                    lg: "18px",
-                  },
-                }}
-              >
-                {" "}
-                This is a certificate to show that I part - took in chess
-                lessons and a tournament in Grade 7 amongst my school
-                learners.This was sponsors by Nedbank.{" "}
-              </Typography>
-            </Paper>
-          </Grid>
-
-          <Grid
-            item
-            xs={12}
-            md={6}
-            sx={{
-              margin: {xs:"0 auto" , lg:'0'},
-              height: "320px",
-              padding: "2rem",
-            }}
-          >
-            <Paper
-              sx={{
-                padding: "2rem",
-                height: "100%",
-                background: "rgba(12,12,12,.5)",
-                color: "#eee",
-                borderBottom: "5px solid #AFE1AF",
-                display: "flex",
-                flexDirection: "column",
-                justifyContent: "space-evenly",
-              }}
-            >
-              <Typography
-                sx={{
-                  fontSize: {
-                    xs: "20px",
-                    lg: "24px",
-                  },
-                }}
-              >
-                {" "}
-                Prefect - Deputy Headboy{" "}
-              </Typography>{" "}
-              <Typography
-                sx={{
-                  fontSize: "26px",
-                  fontWeight: "400",
-                  position: "relative",
-                }}
-              >
-                {" "}
-                Turffontein Primary School{" "}
-              </Typography>
-              <Typography
-                sx={{
-                  fontSize: {
-                    xs: "20px",
-                    lg: "24px",
-                  },
-                }}
-              >
-                {" "}
-                2014{" "}
-              </Typography>{" "}
-              <Typography
-                sx={{
-                  fontSize: {
-                    xs: "16px",
-                    lg: "18px",
-                  },
-                }}
-              >
-                {" "}
-                A certificate to show prroof that I served as a Deputy Headboy
-                and responsible for all the other prefects and school
-                disciplinary team.{" "}
-              </Typography>{" "}
-            </Paper>
-          </Grid>
-        </Grid>
+          About{" "}
+        </Button>
+        <Button
+          onClick={() => {
+            handleChange("projects");
+          }}
+          sx={{
+            ...TabStyles,
+            borderBottom:
+              value === "projects" ? "5px solid #111" : "5px solid transparent",
+          }}
+          label=""
+        >
+          {" "}
+          Projects{" "}
+        </Button>
+        <Button
+          onClick={() => {
+            handleChange("xp");
+          }}
+          sx={{
+            ...TabStyles,
+            borderBottom:
+              value === "xp" ? "5px solid #111" : "5px solid transparent",
+          }}
+          label=""
+        >
+          {" "}
+          XP{" "}
+        </Button>
+        <Button
+          onClick={() => {
+            handleChange("skills");
+          }}
+          sx={{
+            ...TabStyles,
+            borderBottom:
+              value === "skills" ? "5px solid #111" : "5px solid transparent",
+          }}
+          label=""
+        >
+          {" "}
+          Skills{" "}
+        </Button>
+        <Button
+          onClick={() => {
+            handleChange("contact");
+          }}
+          sx={{
+            ...TabStyles,
+            borderBottom:
+              value === "contact" ? "5px solid #111" : "5px solid transparent",
+          }}
+          label=""
+        >
+          {" "}
+          Contact{" "}
+        </Button>
+      </Box>
+      <Box sx={{ display: value === "about" ? "flex" : "none" }} index={0}>
+        <AboutMe />
+      </Box>
+      <Box sx={{ display: value === "projects" ? "flex" : "none" }} index={1}>
+        <Projects />
+      </Box>
+      <Box sx={{ display: value === "xp" ? "flex" : "none" }} index={2}>
+        Item Four Content
+      </Box>
+      <Box sx={{ display: value === "skills" ? "flex" : "none" }} index={3}>
+        {/* <SkillsCentre /> */}
+        <SkillsSection SkillsStats={SkillsStats} />
+      </Box>
+      <Box sx={{ display: value === "contact" ? "flex" : "none" }} index={4}>
+        <ContactForm />
       </Box>
     </Box>
   );
+};
+
+const SkillsCentre = () => {
+  return (
+    <Box sx={{ width: "100%" }}>
+      <Box sx={{ padding: "21px 0", width: "100%" }}>
+        <Typography className="font-fam">{"Here is my Skillset."}</Typography>
+        <Typography
+          className="font-fam"
+          sx={{ fontWeight: "600", fontSize: "21px", m: "12px 0" }}
+        >
+          {"Web Development"}
+        </Typography>
+
+        {SkillsStats.map((skill, index) => {
+          return (
+            <Grid container>
+              <Grid item xs={2}>
+                <Avatar
+                  src={skill.icon}
+                  sx={{
+                    height: "35px",
+                    width: "35px",
+                    margin: "12px 0",
+                    borderRadius: "0",
+                  }}
+                />
+              </Grid>
+              <Grid
+                item
+                xs={10}
+                sx={{
+                  display: "flex",
+                  justifyContent: "center",
+                  // alignItems: "center",
+                  flexDirection: "column",
+                  height: "100%",
+                  minHeight: "60px",
+                }}
+              >
+                <Typography className="font-fam">{skill.skill}</Typography>
+
+                <Box
+                  sx={{
+                    width: "100%",
+                    background: "rgba(1,1,1,.1)",
+                    height: "2.5px",
+                  }}
+                >
+                  <Box
+                    sx={{
+                      background: "rgba(1,1,1,.7)",
+                      width: skill.level,
+                      height: "2.5px",
+                    }}
+                  />
+                </Box>
+              </Grid>
+            </Grid>
+          );
+        })}
+      </Box>
+    </Box>
+  );
+};
+
+const SkillsSection = ({ SkillsStats }) => {
+  const [animatedLevels, setAnimatedLevels] = useState({});
+
+  useEffect(() => {
+    const newAnimatedLevels = {};
+    SkillsStats.forEach((skill) => {
+      newAnimatedLevels[skill.skill] = 0;
+    });
+    setAnimatedLevels(newAnimatedLevels);
+  }, [SkillsStats]);
+
+  useEffect(() => {
+    const intervalId = setInterval(() => {
+      setAnimatedLevels((prevLevels) => {
+        const newLevels = { ...prevLevels };
+        SkillsStats.forEach((skill) => {
+          if (newLevels[skill.skill] < parseInt(skill.level)) {
+            newLevels[skill.skill] += 10;
+          }
+        });
+        return newLevels;
+      });
+    }, 20);
+
+    return () => clearInterval(intervalId);
+  }, [SkillsStats]);
+
+  return (
+    <Box sx={{ width: "100%" }}>
+      <Box sx={{ padding: "21px 0", width: "100%" }}>
+        <Typography className="font-fam">{"Here is my Skillset."}</Typography>
+        <Typography
+          className="font-fam"
+          sx={{ fontWeight: "600", fontSize: "21px", m: "12px 0" }}
+        >
+          {"Web Development"}
+        </Typography>
+
+        {SkillsStats.map((skill, index) => {
+          return (
+            <Grid key={index} container>
+              <Grid
+                item
+                xs={2}
+                md={1}
+                sx={{
+                  display: "flex",
+                  justifyContent: "center",
+                  flexDirection: "column",
+                }}
+              >
+                <Avatar
+                  src={skill.icon}
+                  sx={{
+                    height: "35px",
+                    width: "35px",
+                    margin: "12px 0",
+                    borderRadius: "0",
+                  }}
+                />
+              </Grid>
+              <Grid
+                item
+                xs={10}
+                md={11}
+                sx={{
+                  display: "flex",
+                  justifyContent: "center",
+                  flexDirection: "column",
+                  height: "100%",
+                  minHeight: "60px",
+                }}
+              >
+                <Typography className="font-fam">{skill.skill}</Typography>
+
+                <Box
+                  sx={{
+                    width: "100%",
+                    background: "rgba(1,1,1,.1)",
+                    height: "2.5px",
+                  }}
+                >
+                  <Box
+                    sx={{
+                      background: "rgba(1,1,1,.7)",
+                      width: `${animatedLevels[skill.skill]}%`,
+                      height: "2.5px",
+                    }}
+                  />
+                </Box>
+              </Grid>
+            </Grid>
+          );
+        })}
+      </Box>
+    </Box>
+  );
+};
+
+const AboutMe = () => {
+  return (
+    <Grid container>
+      <Grid
+        item
+        xs={12}
+        md={6}
+        sx={{
+          p: { xs: "0", md: "32px 21px" },
+          minHeight: "auto",
+          color: "white",
+        }}
+      >
+        <Box
+          sx={{
+            width: "100%",
+            background: "red",
+            display: { xs: "none", md: "block" },
+            height: "100%",
+            backgroundImage: 'url("/dercio.jpg")',
+            backgroundSize: "cover",
+            backgroundPosition: { xs: "top", md: "center top" },
+            backgroundAttachment: { xs: "fixed", md: "scroll" },
+          }}
+        />
+      </Grid>
+      <Grid
+        item
+        xs={12}
+        md={6}
+        sx={{ p: { xs: "12px 0", md: "32px 21px" }, minHeight: "50vh" }}
+      >
+        <Box sx={{ m: "32px 0 0 0" }}>
+          <Typography className="font-fam">{"Dercio Maduna"}</Typography>
+          <Typography
+            className="font-fam"
+            sx={{ fontWeight: "600", fontSize: "21px", m: "12px 0" }}
+          >
+            {"Welcome to My Portfolio"}
+          </Typography>
+          <Typography className="font-fam" sx={{ m: "12px 0" }}>
+            Hello! My name is Dercio Maduna, and I am a passionate frontend
+            developer with a strong background in building exceptional web
+            applications. With expertise in technologies like React.js, Next.js,
+            and Node.js, I am committed to delivering user-friendly and visually
+            appealing digital experiences. Throughout my career, I have had the
+            privilege of working on a diverse range of projects, each one
+            challenging me to push the boundaries of what is possible with
+            modern web development. From creating comprehensive healthcare
+            platforms like the UFS Virtual Clinic to building engaging websites
+            for student organizations and event planning companies, I have honed
+            my skills in crafting intuitive interfaces and robust backend
+            systems.
+          </Typography>
+          <Box
+            sx={{
+              width: "100%",
+              background: "red",
+              display: { xs: "block", md: "none" },
+              height: "35vh",
+              backgroundImage: 'url("/dercio.jpg")',
+              backgroundSize: "cover",
+              backgroundPosition: { xs: "top", md: "center top" },
+              // backgroundAttachment: { xs: "fixed", md: "scroll" },
+            }}
+          />
+          <Typography className="font-fam" sx={{ m: "12px 0" }}>
+            In this portfolio, you will find a selection of my most notable
+            projects, showcasing my technical prowess, attention to detail, and
+            ability to bring ideas to life. Each project is a testament to my
+            dedication to staying at the forefront of industry trends,
+            continuously learning, and collaborating with talented teams to
+            create impactful solutions. As you explore my work, I hope you'll
+            get a sense of my commitment to excellence, my love for
+            problem-solving, and my desire to make a meaningful difference
+            through the power of technology. I am always eager to take on new
+            challenges and push the boundaries of what is possible in the world
+            of frontend development. Thank you for taking the time to visit my
+            portfolio. I look forward to the opportunity to discuss how I can
+            contribute my skills and passion to your next project. Happy
+            exploring!
+          </Typography>
+        </Box>
+      </Grid>
+    </Grid>
+  );
+};
+
+const SkillsStats = [
+  {
+    skill: "JavaScript",
+    level: "80%",
+    icon: "https://img.icons8.com/?size=100&id=hKrJAdwqbGgG&format=png&color=000000",
+  },
+  {
+    skill: "ReactJS & React Native",
+    level: "85%",
+    icon: "https://img.icons8.com/?size=100&id=0Da6k7SMq0hs&format=png&color=000000",
+  },
+  {
+    skill: "Node.js",
+    level: "65%",
+    icon: "https://img.icons8.com/?size=100&id=t9oCxEN7McHZ&format=png&color=000000",
+  },
+  {
+    skill: "MySQL",
+    level: "30%",
+    icon: "https://img.icons8.com/?size=100&id=39858&format=png&color=000000",
+  },
+  {
+    skill: "Cloud Computing",
+    level: "45%",
+    icon: "https://img.icons8.com/?size=100&id=Xoxp-VVeny7f&format=png&color=000000",
+  },
+  {
+    skill: "AWS",
+    level: "50%",
+    icon: "https://img.icons8.com/?size=100&id=VoXRGxL3ekkk&format=png&color=000000",
+  },
+  {
+    skill: "Git",
+    level: "70%",
+    icon: "https://img.icons8.com/?size=100&id=12599&format=png&color=000000",
+  },
+  {
+    skill: "Linux",
+    level: "60%",
+    icon: "https://img.icons8.com/?size=100&id=38796&format=png&color=000000",
+  },
+  {
+    skill: "Project Management",
+    level: "75%",
+    icon: "https://img.icons8.com/?size=100&id=102879&format=png&color=000000",
+  },
+  {
+    skill: "Collaboration",
+    level: "90%",
+    icon: "https://img.icons8.com/?size=100&id=42255&format=png&color=000000",
+  },
+  {
+    skill: "CI/CD",
+    level: "60%",
+    icon: "https://img.icons8.com/?size=100&id=40886&format=png&color=000000",
+  },
+  {
+    skill: "C/C++",
+    level: "25%",
+    icon: "https://img.icons8.com/?size=100&id=55199&format=png&color=000000",
+  },
+  {
+    skill: "Figma",
+    level: "75%",
+    icon: "https://img.icons8.com/?size=100&id=xBrQ97Arogyy&format=png&color=000000",
+  },
+  {
+    skill: "Next.js",
+    level: "80%",
+    icon: "https://img.icons8.com/?size=100&id=yUdJlcKanVbh&format=png&color=000000",
+  },
+  {
+    skill: "Database Management",
+    level: "40%",
+    icon: "https://img.icons8.com/?size=100&id=ANkmbbSm2OCp&format=png&color=000000",
+  },
+  {
+    skill: "Testing",
+    level: "10%",
+    icon: "https://img.icons8.com/?size=100&id=40886&format=png&color=000000",
+  },
+];
+
+const TextFieldStyles = {
+  root: {
+    "& .MuiInputBase-root": {
+      height: "10px", // Adjust the height as needed
+      borderColor: "#111", // Adjust the border color as needed
+    },
+    "& .MuiInputBase-input": {
+      borderColor: "#111", // Adjust the border color as needed
+      padding: "8px 12px", // Adjust the padding as needed
+    },
+    "& .MuiOutlinedInput-notchedOutline": {
+      borderColor: "#111", // Adjust the border color as needed
+    },
+    "& .MuiFormLabel-root": {
+      borderColor: "#111", // Adjust the border color as needed
+      fontSize: "14px", // Adjust the font size of the label as needed
+    },
+  },
 };
