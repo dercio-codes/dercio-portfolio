@@ -18,8 +18,15 @@ import {
   Link,
 } from "@mui/material";
 import { useSpring, animated } from "@react-spring/web";
+import Marquee from "react-fast-marquee";
 
-import { GitHub, LinkedIn, Twitter } from "@mui/icons-material";
+import {
+  GitHub,
+  LinkedIn,
+  Twitter,
+  Email,
+  CallRounded,
+} from "@mui/icons-material";
 
 export default function Home() {
   const Technologies =
@@ -74,6 +81,109 @@ export default function Home() {
                 "ALX Software Engineering Student | Fullstack React , React Native Developer | Nextjs & Web Enterprise | C , Python , UI/UX"
               }
             </Typography>
+            <Box
+              sx={{
+                display: "flex",
+                justifyContent: "flex-end",
+                flexDirection: { xs: "column", md: "row" },
+                m: { xs: "12px 0" },
+              }}
+            >
+              <Marquee speed="12">
+                {[
+                  "The important thing is not to stop questioning. Curiosity has its own reason for existing.",
+                  "The greatest enemy of knowledge is not ignorance, it is the illusion of knowledge.",
+                  "The true sign of intelligence is not knowledge but imagination",
+                  "The best way to predict the future is to invent it.",
+                  "The future of computer science is not machines, but minds",
+                ].map((item, index) => {
+                  return (
+                    <Typography
+                      key={index}
+                      className="font-fam"
+                      sx={{ fontSize: "14px", m: "0 12px" }}
+                    >
+                      {item}
+                    </Typography>
+                  );
+                })}
+              </Marquee>
+
+              <Box sx={{ display: "flex", alignItems: "center" }}>
+                <Link
+                  href="https://www.linkedin.com/in/dercio-maduna-b718501b6/"
+                  target="_blank"
+                  sx={{
+                    display: "flex",
+                    alignItems: "center",
+                    textDecoratioon: "none",
+                    color: "rgba(1,1,1,.7)",
+                  }}
+                  rel="noopener noreferrer"
+                >
+                  <LinkedIn
+                    sx={{ margin: "12px 8px", color: "rgba(1,1,1,1)" }}
+                  />
+                </Link>
+
+                <Link
+                  href="https://twitter.com/derciomaduna"
+                  target="_blank"
+                  sx={{
+                    display: "flex",
+                    alignItems: "center",
+                    textDecoratioon: "none",
+                    color: "rgba(1,1,1,.7)",
+                  }}
+                  rel="noopener noreferrer"
+                >
+                  <Twitter
+                    sx={{ margin: "12px 8px", color: "rgba(1,1,1,1)" }}
+                  />
+                </Link>
+                <Link
+                  href="https://github.com/dercio-codes"
+                  target="_blank"
+                  sx={{
+                    display: "flex",
+                    alignItems: "center",
+                    textDecoratioon: "none",
+                    color: "rgba(1,1,1,.7)",
+                  }}
+                  rel="noopener noreferrer"
+                >
+                  <GitHub sx={{ margin: "12px 8px", color: "rgba(1,1,1,1)" }} />
+                </Link>
+                <Link
+                  href="https://github.com/dercio-codes"
+                  target="_blank"
+                  sx={{
+                    display: "flex",
+                    alignItems: "center",
+                    textDecoratioon: "none",
+                    color: "rgba(1,1,1,.7)",
+                  }}
+                  rel="noopener noreferrer"
+                >
+                  <Email sx={{ margin: "12px 8px", color: "rgba(1,1,1,1)" }} />
+                </Link>
+                <Link
+                  href="https://github.com/dercio-codes"
+                  target="_blank"
+                  sx={{
+                    display: "flex",
+                    alignItems: "center",
+                    textDecoratioon: "none",
+                    color: "rgba(1,1,1,.7)",
+                  }}
+                  rel="noopener noreferrer"
+                >
+                  <CallRounded
+                    sx={{ margin: "12px 8px", color: "rgba(1,1,1,1)" }}
+                  />
+                </Link>
+              </Box>
+            </Box>
           </Grid>
         </Grid>
       </Box>
