@@ -1,25 +1,16 @@
 import React, { useRef, useEffect, useState } from "react";
 import {
   Box,
-  Select,
-  MenuItem,
-  IconButton,
   Button,
   Grid,
   Typography,
   TextField,
-  Stack,
-  CircularProgress,
-  Paper,
   Avatar,
-  Tab,
-  Tabs,
-  LinearProgress,
+  Icon,
   Link,
 } from "@mui/material";
 import { useSpring, animated } from "@react-spring/web";
 import Marquee from "react-fast-marquee";
-
 import {
   GitHub,
   LinkedIn,
@@ -27,6 +18,7 @@ import {
   Email,
   CallRounded,
 } from "@mui/icons-material";
+import { Stepper, Step, StepLabel, StepContent } from "@mui/material";
 
 export default function Home() {
   const Technologies =
@@ -708,17 +700,59 @@ const TabController = () => {
 };
 
 const Experience = () => {
+  const [activeStep, setActiveStep] = React.useState(0);
+
+  const handleNext = () => {
+    setActiveStep((prevActiveStep) => prevActiveStep + 1);
+  };
+
+  const handleBack = () => {
+    setActiveStep((prevActiveStep) => prevActiveStep - 1);
+  };
+
   return (
-    <Box sx={{ width: "100%" }}>
-      <Box sx={{ padding: "21px 0", width: "100%" }}>
-        <Typography className="font-fam">{"Here is my Skillset."}</Typography>
-        <Typography
-          className="font-fam"
-          sx={{ fontWeight: "600", fontSize: "21px", m: "12px 0" }}
-        >
-          {"Experience"}
-        </Typography>
-      </Box>
+    <Box>
+      <Stepper activeStep={activeStep} orientation="vertical">
+        {experiences.map((experience, index) => (
+          <Step sx={{ background: "" }} key={index}>
+            <StepLabel>
+              <Avatar
+                sx={{
+                  width: "200px",
+                  height: "75px",
+                  objectFit: "contain",
+                  borderRadius: "0",
+                  margin: "32px 0 0 0",
+                }}
+                src={experience.icon}
+              />
+              <Typography className="font-fam" variant="h6">
+                {experience.title}
+              </Typography>
+              <Typography className="font-fam" variant="subtitle2">
+                {experience.year}
+              </Typography>
+            </StepLabel>
+            <StepContent>
+              <Typography className="font-fam">
+                {experience.description}
+              </Typography>
+              <Box sx={{ mt: 2 }}>
+                {activeStep !== 0 && (
+                  <Button onClick={handleBack} sx={{ mr: 1 }}>
+                    Back
+                  </Button>
+                )}
+                {activeStep !== experiences.length - 1 && (
+                  <Button onClick={handleNext} variant="contained">
+                    Next
+                  </Button>
+                )}
+              </Box>
+            </StepContent>
+          </Step>
+        ))}
+      </Stepper>
     </Box>
   );
 };
@@ -1003,3 +1037,54 @@ const TextFieldStyles = {
     },
   },
 };
+
+const experiences = [
+  {
+    title: "Senior FullStack Web Developer",
+    year: "2023 - Present",
+    description:
+      "Responsible for designing and developing user-friendly web applications using modern frontend technologies such as React.js, Next.js, and Material-UI.",
+    features: [
+      "Implemented responsive and accessible user interfaces",
+      "Integrated with backend APIs to fetch and display data",
+      "Collaborated with cross-functional teams to deliver high-quality software",
+    ],
+    icon: "https://atomusdev.co.za/logo_transparent.png",
+  },
+  {
+    title: "Web Developer Intern",
+    year: "2020 - 2021",
+    description:
+      "Gained hands-on experience in web development, working on various projects for clients and organizations.",
+    features: [
+      "Developed dynamic websites using HTML, CSS, and JavaScript",
+      "Collaborated with designers to translate mockups into functional web pages",
+      "Participated in code reviews and learned best practices for web development",
+    ],
+    icon: "/graphic-design/activemi-logo.jpg",
+  },
+  {
+    title: "Junior Web Developer",
+    year: "2021 - 2022",
+    description:
+      "Provided technical support and assistance to students and faculty at the university's IT department.",
+    features: [
+      "Troubleshot hardware and software issues",
+      "Conducted training sessions on various software applications",
+      "Contributed to the maintenance and improvement of the university's IT infrastructure",
+    ],
+    icon: "/graphic-design/activemi-logo.jpg",
+  },
+  {
+    title: "Senior Web Developer",
+    year: "2022 - 2023",
+    description:
+      "Provided technical support and assistance to students and faculty at the university's IT department.",
+    features: [
+      "Troubleshot hardware and software issues",
+      "Conducted training sessions on various software applications",
+      "Contributed to the maintenance and improvement of the university's IT infrastructure",
+    ],
+    icon: "/graphic-design/activemi-logo.jpg",
+  },
+];
