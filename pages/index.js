@@ -11,7 +11,7 @@ import {
 } from "@mui/material";
 import { AppBar, Toolbar, Container } from '@mui/material';
 import Image from 'next/image';
-import CoverImage from '../public/avatar.jpg'; 
+import CoverImage from '../public/dercio.jpg'; 
 import { useSpring, animated } from "@react-spring/web";
 import Marquee from "react-fast-marquee";
 import {
@@ -29,294 +29,8 @@ export default function Home() {
 
   return (
     <Box>
-      <Box sx={{ width: "90%", margin: "0 auto", p: "21px 0" }}>
-        <Grid container>
-          <Grid
-            item
-            xs={12}
-            md={3}
-            sx={{
-              display: "flex",
-              alignItems: "center",
-              justifyContent: "center",
-              flexDirection: "column",
-            }}
-          >
-            <Avatar
-              className="bounce-in-top"
-              src={"/dercio.jpg"}
-              sx={{
-                m: "21px auto",
-                objectFit: "contain",
-                width: { xs: "150px", lg: "120px" },
-                height: { xs: "150px", lg: "120px" },
-              }}
-            />
-          </Grid>
-          <Grid
-            item
-            xs={12}
-            md={9}
-            sx={{
-              display: "flex",
-              // alignItems: "center",
-              justifyContent: "center",
-              flexDirection: "column",
-            }}
-          >
-            <Typography className="font-fam" sx={{ fontSize: "36px" }}>
-              {" "}
-              Dercio Maduna{" "}
-            </Typography>
-            <Typography
-              className="font-fam"
-              sx={{ fontSize: { xs: "14px", md: "16px" } }}
-            >
-              {
-                "ALX Software Engineering Student | Fullstack React , React Native Developer | Nextjs & Web Enterprise | C , Python , UI/UX"
-              }
-            </Typography>
-            <Box
-              sx={{
-                display: "flex",
-                justifyContent: "flex-end",
-                flexDirection: { xs: "column", md: "row" },
-                m: { xs: "12px 0" },
-              }}
-            >
-              <Marquee speed="12">
-                {[
-                  "The important thing is not to stop questioning. Curiosity has its own reason for existing.",
-                  "The greatest enemy of knowledge is not ignorance, it is the illusion of knowledge.",
-                  "The true sign of intelligence is not knowledge but imagination",
-                  "The best way to predict the future is to invent it.",
-                  "The future of computer science is not machines, but minds",
-                ].map((item, index) => {
-                  return (
-                    <Typography
-                      key={index}
-                      className="font-fam"
-                      sx={{ fontSize: "14px", m: "0 12px" }}
-                    >
-                      {item}
-                    </Typography>
-                  );
-                })}
-              </Marquee>
-
-              <Box sx={{ display: "flex", alignItems: "center" }}>
-                <Link
-                  href="https://www.linkedin.com/in/dercio-maduna-b718501b6/"
-                  target="_blank"
-                  sx={{
-                    display: "flex",
-                    alignItems: "center",
-                    textDecoratioon: "none",
-                    color: "rgba(1,1,1,.7)",
-                  }}
-                  rel="noopener noreferrer"
-                >
-                  <LinkedIn
-                    sx={{ margin: "12px 8px", color: "rgba(1,1,1,1)" }}
-                  />
-                </Link>
-
-                <Link
-                  href="https://twitter.com/derciomaduna"
-                  target="_blank"
-                  sx={{
-                    display: "flex",
-                    alignItems: "center",
-                    textDecoratioon: "none",
-                    color: "rgba(1,1,1,.7)",
-                  }}
-                  rel="noopener noreferrer"
-                >
-                  <Twitter
-                    sx={{ margin: "12px 8px", color: "rgba(1,1,1,1)" }}
-                  />
-                </Link>
-                <Link
-                  href="https://github.com/dercio-codes"
-                  target="_blank"
-                  sx={{
-                    display: "flex",
-                    alignItems: "center",
-                    textDecoratioon: "none",
-                    color: "rgba(1,1,1,.7)",
-                  }}
-                  rel="noopener noreferrer"
-                >
-                  <GitHub sx={{ margin: "12px 8px", color: "rgba(1,1,1,1)" }} />
-                </Link>
-                <Link
-                  href="https://github.com/dercio-codes"
-                  target="_blank"
-                  sx={{
-                    display: "flex",
-                    alignItems: "center",
-                    textDecoratioon: "none",
-                    color: "rgba(1,1,1,.7)",
-                  }}
-                  rel="noopener noreferrer"
-                >
-                  <Email sx={{ margin: "12px 8px", color: "rgba(1,1,1,1)" }} />
-                </Link>
-                <Link
-                  href="https://github.com/dercio-codes"
-                  target="_blank"
-                  sx={{
-                    display: "flex",
-                    alignItems: "center",
-                    textDecoratioon: "none",
-                    color: "rgba(1,1,1,.7)",
-                  }}
-                  rel="noopener noreferrer"
-                >
-                  <CallRounded
-                    sx={{ margin: "12px 8px", color: "rgba(1,1,1,1)" }}
-                  />
-                </Link>
-              </Box>
-            </Box>
-          </Grid>
-        </Grid>
-      </Box>
-      <Grid container>
-        <Grid
-          item
-          xs={12}
-          sx={{ padding: { xs: "21px 0", md: "0 " }, background: "" }}
-        >
-          <TabController />
-        </Grid>
-      </Grid>
-      <Box
-        sx={{
-          backgroundImage:
-            'url("https://img.freepik.com/free-photo/3d-abstract-creative-sphere_23-2150885489.jpg?t=st=1719258690~exp=1719262290~hmac=9d7389f69370d7f6fa1a943072252f27a6bd68c54cc055f9b9c4eab011165df3&w=740")',
-        }}
-      >
-        <Box
-          component="footer"
-          sx={{
-            backgroundImage:
-              "linear-gradient(to top, rgba(1,1,1,0.9), rgba(1,1,1,0.3))",
-            color: "#fff",
-            padding: "40px",
-            marginTop: "auto",
-          }}
-        >
-          <Grid container justifyContent="center" spacing={4}>
-            <Grid item xs={12} sm={6} sx={{ display: "none" }}>
-              <Typography variant="h6" gutterBottom>
-                Dercio Maduna
-              </Typography>
-              <Typography variant="body2">
-                Passionate Frontend Developer
-              </Typography>
-            </Grid>
-            <Grid item xs={12} sm={6}>
-              <Typography variant="h6" gutterBottom>
-                Connect with Me
-              </Typography>
-              <Box sx={{}}>
-                <Link
-                  href="https://github.com/derciomaduna"
-                  target="_blank"
-                  sx={{
-                    display: "flex",
-                    alignItems: "center",
-                    textDecoratioon: "none",
-                    color: "rgba(200,200,200,.7)",
-                  }}
-                  rel="noopener noreferrer"
-                >
-                  GitHub
-                  <GitHub
-                    sx={{ margin: "12px 8px", color: "rgba(200,200,200,1)" }}
-                  />
-                </Link>
-              </Box>
-              <Box sx={{}}>
-                <Link
-                  href="https://www.linkedin.com/in/dercio-maduna-b718501b6/"
-                  target="_blank"
-                  sx={{
-                    display: "flex",
-                    alignItems: "center",
-                    textDecoratioon: "none",
-                    color: "rgba(200,200,200,.7)",
-                  }}
-                  rel="noopener noreferrer"
-                >
-                  LinkedIn
-                  <LinkedIn
-                    sx={{ margin: "12px 8px", color: "rgba(200,200,200,1)" }}
-                  />
-                </Link>
-              </Box>
-              <Box sx={{}}>
-                <Link
-                  href="https://twitter.com/derciomaduna"
-                  target="_blank"
-                  sx={{
-                    display: "flex",
-                    alignItems: "center",
-                    textDecoratioon: "none",
-                    color: "rgba(200,200,200,.7)",
-                  }}
-                  rel="noopener noreferrer"
-                >
-                  Twitter
-                  <Twitter
-                    sx={{ margin: "12px 8px", color: "rgba(200,200,200,1)" }}
-                  />
-                </Link>
-              </Box>
-            </Grid>
-            <Grid item xs={12} sm={6} sx={{ display: "none" }}>
-              <Typography variant="h6" gutterBottom>
-                Quick Links
-              </Typography>
-              <Box>
-                <Link href="/">Home</Link>
-              </Box>
-              <Box>
-                <Link href="/about">About</Link>
-              </Box>
-              <Box>
-                <Link href="/portfolio">Portfolio</Link>
-              </Box>
-              <Box>
-                <Link href="/contact">Contact</Link>
-              </Box>
-            </Grid>
-            <Grid item xs={12} sm={6}>
-              <Typography variant="h6" gutterBottom>
-                Contact
-              </Typography>
-              <Typography variant="body2">12derciomaduna@gmail.com</Typography>
-              <Typography variant="body2">0677551017</Typography>
-              <Typography variant="body2">Johannesburg, Gauteng</Typography>
-            </Grid>
-          </Grid>
-          <Box
-            sx={{
-              marginTop: "20px",
-              textAlign: "center",
-              fontSize: "14px",
-              color: "#aaa",
-            }}
-          >
-            <Typography variant="body2">
-              &copy; {new Date().getFullYear()} Dercio Maduna. All rights
-              reserved.
-            </Typography>
-          </Box>
+    <Landing />
         </Box>
-      </Box>
-    </Box>
   );
 }
 
@@ -707,12 +421,12 @@ const TabController = () => {
 
 const Landing = () => {
   return(
-    <Container sx={{ textAlign: 'center', marginTop: '50px' }}>
+    <Container sx={{ textAlign: 'center', margin: '200px 0' }}>
         <Image
           src={CoverImage}
           alt="Cover Image"
           layout="responsive"
-          width={700} // Adjust width as needed
+          width={200} // Adjust width as needed
           height={400} // Adjust height as needed
         />
         <Typography variant="h2" sx={{ marginTop: '20px' }}>
@@ -726,6 +440,7 @@ const Landing = () => {
           color="primary"
           href="https://derciomaduna-portfolio.vercel.app/"
           target="_blank"
+            sx={{ margin:"21px auto" }}
         >
           View Project
         </Button>
