@@ -9,6 +9,9 @@ import {
   Icon,
   Link,
 } from "@mui/material";
+import { AppBar, Toolbar, Container } from '@mui/material';
+import Image from 'next/image';
+import CoverImage from '../public/avatar.jpg'; 
 import { useSpring, animated } from "@react-spring/web";
 import Marquee from "react-fast-marquee";
 import {
@@ -569,7 +572,7 @@ const Projects = () => {
 };
 
 const TabController = () => {
-  const [value, setValue] = useState("about");
+  const [value, setValue] = useState("landing");
 
   const handleChange = (newValue) => {
     setValue(newValue);
@@ -679,7 +682,10 @@ const TabController = () => {
           Contact{" "}
         </Button>
       </Box>
-      <Box sx={{ display: value === "about" ? "flex" : "none" }} index={0}>
+      <Box sx={{ display: value === "landing" ? "flex" : "none" }} index={0}>
+        <Landing />
+      </Box>
+          <Box sx={{ display: value === "about" ? "flex" : "none" }} index={0}>
         <AboutMe />
       </Box>
       <Box sx={{ display: value === "projects" ? "flex" : "none" }} index={1}>
@@ -698,6 +704,34 @@ const TabController = () => {
     </Box>
   );
 };
+
+const Landing = () => {
+  return(
+    <Container sx={{ textAlign: 'center', marginTop: '50px' }}>
+        <Image
+          src={CoverImage}
+          alt="Cover Image"
+          layout="responsive"
+          width={700} // Adjust width as needed
+          height={400} // Adjust height as needed
+        />
+        <Typography variant="h2" sx={{ marginTop: '20px' }}>
+          Dercio Maduna Portfolio
+        </Typography>
+        <Typography variant="h5" sx={{ marginTop: '10px', marginBottom: '20px' }}>
+          A Full-Stack Developer Creating Engaging Web Applications
+        </Typography>
+        <Button
+          variant="contained"
+          color="primary"
+          href="https://derciomaduna-portfolio.vercel.app/"
+          target="_blank"
+        >
+          View Project
+        </Button>
+      </Container>
+    )
+    }
 
 const Experience = () => {
   const [activeStep, setActiveStep] = React.useState(0);
