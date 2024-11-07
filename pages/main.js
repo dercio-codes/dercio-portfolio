@@ -572,7 +572,7 @@ const Projects = () => {
 };
 
 const TabController = () => {
-  const [value, setValue] = useState("landing");
+  const [value, setValue] = useState("about");
 
   const handleChange = (newValue) => {
     setValue(newValue);
