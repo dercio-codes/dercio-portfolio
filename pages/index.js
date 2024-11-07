@@ -422,14 +422,7 @@ const TabController = () => {
 const Landing = () => {
   return(
     <Container sx={{ textAlign: 'center', margin: '200px 0' }}>
-        <Image
-          src={CoverImage}
-          alt="Cover Image"
-          layout="responsive"
-          width={200} // Adjust width as needed
-          height={400} // Adjust height as needed
-        />
-        <Typography variant="h2" sx={{ marginTop: '20px' }}>
+         variant="h2" sx={{ marginTop: '20px' }}>
           Dercio Maduna Portfolio
         </Typography>
         <Typography variant="h5" sx={{ marginTop: '10px', marginBottom: '20px' }}>
