@@ -422,7 +422,7 @@ const TabController = () => {
 const Landing = () => {
   return(
     <Container sx={{ textAlign: 'center', margin: '200px 0' }}>
-         variant="h2" sx={{ marginTop: '20px' }}>
+        <Typography variant="h2" sx={{ marginTop: '20px' }}>
           Dercio Maduna Portfolio
         </Typography>
         <Typography variant="h5" sx={{ marginTop: '10px', marginBottom: '20px' }}>
