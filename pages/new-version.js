@@ -422,7 +422,7 @@ const Skills = () => (
       </Typography>
       <Grid container spacing={4} justifyContent="center">
         {SKILLS.map((skill, index) => (
-          <Grid item xs={6} sm={4} md={3} key={index}>
+          <Grid item  size={{xs:6,sm:4,lg:3}} xs={6} sm={4} md={3} key={index}>
             <Paper
               sx={{
                 p: 4,
@@ -465,7 +465,7 @@ const Projects = () => (
       </Typography>
       <Grid container spacing={4}>
         {PROJECTS.map((project, index) => (
-          <Grid item xs={12} sm={6} lg={4} key={index}>
+          <Grid item size={{xs:12,sm:6,lg:4}} sm={6} lg={4} key={index}>
             <Card
               sx={{ display: 'flex', flexDirection: 'column', height: '100%', backgroundColor: 'rgba(255 255 255 / 0.05)' }}
               elevation={8}
@@ -603,8 +603,7 @@ const Experience = () => (
                 />
                 <Grid
                   item
-                  xs={12}
-                  md={6}
+                  size={{xs:12,sm:6}}
                   sx={{
                     textAlign: { xs: 'left', md: isLeft ? 'right' : 'left' },
                     pr: isLeft ? 4 : 0,
