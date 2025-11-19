@@ -384,7 +384,7 @@ const About = () => (
           <Typography paragraph>{PERSONAL_INFO.bio}</Typography>
           <Typography paragraph>
             My journey in tech has been driven by a relentless curiosity and a commitment to excellence.
-            Whether it's architecting complex backend systems or polishing the finest frontend details,
+            Whether it is architecting complex backend systems or polishing the finest frontend details,
             I bring a holistic approach to every project.
           </Typography>
           <Grid container spacing={2}>
@@ -653,7 +653,7 @@ const Contact = () => (
         Get In Touch
       </Typography>
       <Typography align="center" sx={{ mb: 8, color: 'grey.400' }}>
-        Let's discuss your next project or collaboration.
+        Let us discuss your next project or collaboration.
       </Typography>
       <Grid container spacing={6} justifyContent="center">
         <Grid item size={{xs:12,md:5}}>
